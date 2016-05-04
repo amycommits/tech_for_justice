@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Informations</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Pd</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Middle name</th>
+      <th>Prefix suffix</th>
+      <th>Title</th>
+      <th>Address line 1</th>
+      <th>Address line2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_informations.each do |user_information| %>
+      <tr>
+        <td><%= user_information.user %></td>
+        <td><%= user_information.pd_id %></td>
+        <td><%= user_information.first_name %></td>
+        <td><%= user_information.last_name %></td>
+        <td><%= user_information.middle_name %></td>
+        <td><%= user_information.preefix_suffix %></td>
+        <td><%= user_information.title %></td>
+        <td><%= user_information.address_line_1 %></td>
+        <td><%= user_information.address_line2 %></td>
+        <td><%= user_information.city %></td>
+        <td><%= user_information.state %></td>
+        <td><%= user_information.phone_number %></td>
+        <td><%= link_to 'Show', user_information %></td>
+        <td><%= link_to 'Edit', edit_user_information_path(user_information) %></td>
+        <td><%= link_to 'Destroy', user_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User information', new_user_information_path %>

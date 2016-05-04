@@ -1,0 +1,2 @@
+module UserInformationsHelper
+end

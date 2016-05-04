@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_information.user %>
+</p>
+
+<p>
+  <strong>Pd:</strong>
+  <%= @user_information.pd_id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user_information.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user_information.last_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @user_information.middle_name %>
+</p>
+
+<p>
+  <strong>Preefix suffix:</strong>
+  <%= @user_information.preefix_suffix %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @user_information.title %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @user_information.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line2:</strong>
+  <%= @user_information.address_line2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user_information.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user_information.state %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @user_information.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_user_information_path(@user_information) %> |
+<%= link_to 'Back', user_informations_path %>

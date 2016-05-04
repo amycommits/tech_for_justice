@@ -1,0 +1,65 @@
+<%= form_for(@user_information) do |f| %>
+  <% if @user_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_information.errors.count, "error") %> prohibited this user_information from being saved:</h2>
+
+      <ul>
+      <% @user_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, value: current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.label :pd_id %><br>
+    <%= f.text_area :pd_id %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_area :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_area :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_area :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :preefix_suffix %><br>
+    <%= f.text_area :preefix_suffix %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_1 %><br>
+    <%= f.text_area :address_line_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line2 %><br>
+    <%= f.text_area :address_line2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_area :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_area :state %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_area :phone_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
