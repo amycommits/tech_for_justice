@@ -1,0 +1,2 @@
+module UserReferencesHelper
+end

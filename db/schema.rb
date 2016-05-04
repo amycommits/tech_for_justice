@@ -11,10 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504010523) do
+ActiveRecord::Schema.define(version: 20160504022118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "documents", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_arguments", force: :cascade do |t|
+    t.integer  "document_id"
+    t.string   "overall_reason"
+    t.string   "user_change_details"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "user_arguments", ["document_id"], name: "index_user_arguments_on_document_id", using: :btree
+
+  create_table "user_case_infos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "docket_id"
+    t.text     "charged_with"
+    t.text     "charge_type"
+    t.text     "police_description"
+    t.text     "case_conclusion"
+    t.text     "is_case_pending"
+    t.datetime "case_end_date"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "user_case_infos", ["user_id"], name: "index_user_case_infos_on_user_id", using: :btree
+
+  create_table "user_documents", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "document_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_documents", ["document_id"], name: "index_user_documents_on_document_id", using: :btree
+  add_index "user_documents", ["user_id"], name: "index_user_documents_on_user_id", using: :btree
 
   create_table "user_informations", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,6 +76,15 @@ ActiveRecord::Schema.define(version: 20160504010523) do
 
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree
 
+  create_table "user_references", force: :cascade do |t|
+    t.integer  "document_id"
+    t.text     "attachment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_references", ["document_id"], name: "index_user_references_on_document_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -53,5 +103,10 @@ ActiveRecord::Schema.define(version: 20160504010523) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "user_arguments", "documents"
+  add_foreign_key "user_case_infos", "users"
+  add_foreign_key "user_documents", "documents"
+  add_foreign_key "user_documents", "users"
   add_foreign_key "user_informations", "users"
+  add_foreign_key "user_references", "documents"
 end

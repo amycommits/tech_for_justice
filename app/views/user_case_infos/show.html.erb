@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_case_info.user %>
+</p>
+
+<p>
+  <strong>Docket:</strong>
+  <%= @user_case_info.docket_id %>
+</p>
+
+<p>
+  <strong>Charged with:</strong>
+  <%= @user_case_info.charged_with %>
+</p>
+
+<p>
+  <strong>Charge type:</strong>
+  <%= @user_case_info.charge_type %>
+</p>
+
+<p>
+  <strong>Police description:</strong>
+  <%= @user_case_info.police_description %>
+</p>
+
+<p>
+  <strong>Case conclusion:</strong>
+  <%= @user_case_info.case_conclusion %>
+</p>
+
+<p>
+  <strong>Is case pending:</strong>
+  <%= @user_case_info.is_case_pending %>
+</p>
+
+<p>
+  <strong>Case end date:</strong>
+  <%= @user_case_info.case_end_date %>
+</p>
+
+<%= link_to 'Edit', edit_user_case_info_path(@user_case_info) %> |
+<%= link_to 'Back', user_case_infos_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @user_reference.document %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @user_reference.attachment %>
+</p>
+
+<%= link_to 'Edit', edit_user_reference_path(@user_reference) %> |
+<%= link_to 'Back', user_references_path %>

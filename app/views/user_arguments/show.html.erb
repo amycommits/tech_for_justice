@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @user_argument.document %>
+</p>
+
+<p>
+  <strong>Overall reason:</strong>
+  <%= @user_argument.overall_reason %>
+</p>
+
+<p>
+  <strong>User change details:</strong>
+  <%= @user_argument.user_change_details %>
+</p>
+
+<%= link_to 'Edit', edit_user_argument_path(@user_argument) %> |
+<%= link_to 'Back', user_arguments_path %>

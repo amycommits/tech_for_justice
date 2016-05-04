@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :user_references
+  resources :user_arguments
+  resources :user_case_infos
+  resources :user_documents
+  resources :documents
   resources :user_informations
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

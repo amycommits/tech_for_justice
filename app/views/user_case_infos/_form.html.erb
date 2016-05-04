@@ -1,0 +1,49 @@
+<%= form_for(@user_case_info) do |f| %>
+  <% if @user_case_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_case_info.errors.count, "error") %> prohibited this user_case_info from being saved:</h2>
+
+      <ul>
+      <% @user_case_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :docket_id %><br>
+    <%= f.text_area :docket_id %>
+  </div>
+  <div class="field">
+    <%= f.label :charged_with %><br>
+    <%= f.text_area :charged_with %>
+  </div>
+  <div class="field">
+    <%= f.label :charge_type %><br>
+    <%= f.text_area :charge_type %>
+  </div>
+  <div class="field">
+    <%= f.label :police_description %><br>
+    <%= f.text_area :police_description %>
+  </div>
+  <div class="field">
+    <%= f.label :case_conclusion %><br>
+    <%= f.text_area :case_conclusion %>
+  </div>
+  <div class="field">
+    <%= f.label :is_case_pending %><br>
+    <%= f.text_area :is_case_pending %>
+  </div>
+  <div class="field">
+    <%= f.label :case_end_date %><br>
+    <%= f.datetime_select :case_end_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
