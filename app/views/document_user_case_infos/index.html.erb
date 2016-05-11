@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Document User Case Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User document</th>
+      <th>User case info</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @document_user_case_infos.each do |document_user_case_info| %>
+      <tr>
+        <td><%= document_user_case_info.user_document %></td>
+        <td><%= document_user_case_info.user_case_info %></td>
+        <td><%= link_to 'Show', document_user_case_info %></td>
+        <td><%= link_to 'Edit', edit_document_user_case_info_path(document_user_case_info) %></td>
+        <td><%= link_to 'Destroy', document_user_case_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Document user case info', new_document_user_case_info_path %>

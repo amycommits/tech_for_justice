@@ -1,7 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Documents</h1>
+<h1>Choose Your Document</h1>
 
+<h2>Update an existing Document</h2>
+<% if @existing_user_document.present? %>
+ <%= link_to("Update Expungement Form", edit_user_information_path(@existing_user_info.ids,:user_document_id=> @existing_expungement_argument.ids)) %> 
+ <% else %>
+<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> 
+<%end%>
+
+<h2> New Documents </h2>
+<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> 
+<ol>
+  <li>User Information</li><span>/user_informations/3/edit</span>
+  <li>User Document</li><span>user_informations/3/user_documents/79/edit</span>
+  <li>Review Personal Information</li><span>user_informations/3/user_documents/79//user_informations/3/edit</span>
+  <li>User Case Information</li><span>user_informations/3/user_documents/79//user_case_infos/1/edit</span>
+  <li>User Arguments</li><span>user_informations/3/user_documents/79//user_arguments/5/edit</span>
+  <li>User References</li><span>user_informations/3/user_documents/79//user_references/1/edit</span>
+  <li>Review</li><span></span>
+</ol>
+
+<% if 1 < 0 %>
 <table>
   <thead>
     <tr>
@@ -25,3 +45,4 @@
 <br>
 
 <%= link_to 'New Document', new_document_path %>
+<% end %>

@@ -14,7 +14,7 @@
   <tbody>
     <% @user_references.each do |user_reference| %>
       <tr>
-        <td><%= user_reference.document %></td>
+        <td><%= user_reference.user_document_id %></td>
         <td><%= user_reference.attachment %></td>
         <td><%= link_to 'Show', user_reference %></td>
         <td><%= link_to 'Edit', edit_user_reference_path(user_reference) %></td>

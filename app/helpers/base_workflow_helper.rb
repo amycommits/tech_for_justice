@@ -1,0 +1,2 @@
+module BaseWorkflowHelper
+end

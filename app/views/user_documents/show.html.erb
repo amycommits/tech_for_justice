@@ -10,5 +10,12 @@
   <%= @user_document.document %>
 </p>
 
+<%= link_to("Personal Information", { controller: "document_user_informations", action: "new",:user_document_id => @user_doc_id}) %> 
+<p/>
+<%= params[:id]%>
+<p/>
+<%= params[:user_information_id] %>
+
+
 <%= link_to 'Edit', edit_user_document_path(@user_document) %> |
 <%= link_to 'Back', user_documents_path %>

@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing User Arguments</h1>
-
+<%if @existing_argument.present? %>
+<h2><%=@existing_argument.ids%></h2>
+<h3><link_to "Arguments" </h3>
+<% end %>
 <table>
   <thead>
     <tr>

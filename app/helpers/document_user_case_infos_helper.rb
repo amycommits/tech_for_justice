@@ -1,0 +1,2 @@
+module DocumentUserCaseInfosHelper
+end

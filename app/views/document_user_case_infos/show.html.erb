@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User document:</strong>
+  <%= @document_user_case_info.user_document %>
+</p>
+
+<p>
+  <strong>User case info:</strong>
+  <%= @document_user_case_info.user_case_info %>
+</p>
+
+<%= link_to 'Edit', edit_document_user_case_info_path(@document_user_case_info) %> |
+<%= link_to 'Back', document_user_case_infos_path %>

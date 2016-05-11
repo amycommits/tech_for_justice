@@ -4,7 +4,14 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
+    @existing_user_info = UserInformation.where(user_id: current_user.id)
+    @existing_argument = UserArgument.where(user_id: current_user.id, document_id: 1) || nil
+   
     @documents = Document.all
+    #each new document will need to be placed here
+    @expungement_form = @documents.where(name: 'Expungement Motion')
+    @existing_expungement_argument = UserArgument.where(user_id: current_user.id, document_id: @expungement_form.first.id) || nil
+     @existing_user_document = UserDocument.where(user_id: current_user, document_id: @expungement_form.first.id)
   end
 
   # GET /documents/1
@@ -25,6 +32,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(document_params)
+   
 
     respond_to do |format|
       if @document.save

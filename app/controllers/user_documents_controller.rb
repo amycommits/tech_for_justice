@@ -15,40 +15,48 @@ class UserDocumentsController < ApplicationController
   # GET /user_documents/new
   def new
     @user_document = UserDocument.new
+    @doc_id = [params[:document_id]]
   end
 
   # GET /user_documents/1/edit
   def edit
+    @doc_id = UserDocument.where(user_id: current_user.id).last
   end
 
   # POST /user_documents
   # POST /user_documents.json
   def create
     @user_document = UserDocument.new(user_document_params)
-
-    respond_to do |format|
-      if @user_document.save
-        format.html { redirect_to @user_document, notice: 'User document was successfully created.' }
-        format.json { render :show, status: :created, location: @user_document }
-      else
-        format.html { render :new }
-        format.json { render json: @user_document.errors, status: :unprocessable_entity }
-      end
+    @user_information_info = UserInformation.where(user_id: current_user.id)
+   if @user_document.save
+      redirect_to edit_user_document_path(@user_document)
+    else
+      redirect_to 'new'
     end
-  end
+    #redirect to user information
+     end
 
   # PATCH/PUT /user_documents/1
   # PATCH/PUT /user_documents/1.json
   def update
+    @user_information_info = UserInformation.where(user_id: current_user.id)
+   
     respond_to do |format|
       if @user_document.update(user_document_params)
-        format.html { redirect_to @user_document, notice: 'User document was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_document }
+        format.html { redirect_to @document_user_case_info }
+        format.json { render :show, status: :ok, location: @user_document || 0 }
       else
         format.html { render :edit }
         format.json { render json: @user_document.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def go_to_user_info
+    @user_information = UserInformation.new
+  end
+  def go_to_user_case_info
+    @user_case_info = UserCaseInfo.new
   end
 
   # DELETE /user_documents/1

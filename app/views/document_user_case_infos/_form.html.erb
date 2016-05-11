@@ -1,0 +1,25 @@
+<%= form_for(@document_user_case_info) do |f| %>
+  <% if @document_user_case_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document_user_case_info.errors.count, "error") %> prohibited this document_user_case_info from being saved:</h2>
+
+      <ul>
+      <% @document_user_case_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_document_id %><br>
+    <%= f.text_field :user_document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_case_info_id %><br>
+    <%= f.text_field :user_case_info_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

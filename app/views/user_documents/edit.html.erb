@@ -1,6 +1,6 @@
 <h1>Editing User Document</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @user_document %> |
-<%= link_to 'Back', user_documents_path %>
+<% @user_doc_id = @user_document.id %>
+<%= link_to("New Expungement Form", { controller: "user_informations", action: "edit",:document_id=> @user_doc_id}) %> 
+<label id="user_doc_id"><%= @user_doc_id %></label>
