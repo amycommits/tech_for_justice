@@ -11,15 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504022118) do
+ActiveRecord::Schema.define(version: 20160511021304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "document_user_case_infos", force: :cascade do |t|
+    t.integer  "user_document_id"
+    t.integer  "user_case_info_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "document_user_case_infos", ["user_case_info_id"], name: "index_document_user_case_infos_on_user_case_info_id", using: :btree
+  add_index "document_user_case_infos", ["user_document_id"], name: "index_document_user_case_infos_on_user_document_id", using: :btree
+
+  create_table "document_user_informations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "document_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "user_document_id"
+    t.integer  "user_information_id"
+  end
+
+  add_index "document_user_informations", ["document_id"], name: "index_document_user_informations_on_document_id", using: :btree
+  add_index "document_user_informations", ["user_document_id"], name: "index_document_user_informations_on_user_document_id", using: :btree
+  add_index "document_user_informations", ["user_id"], name: "index_document_user_informations_on_user_id", using: :btree
+  add_index "document_user_informations", ["user_information_id"], name: "index_document_user_informations_on_user_information_id", using: :btree
 
   create_table "documents", force: :cascade do |t|
     t.text     "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "form"
   end
 
   create_table "user_arguments", force: :cascade do |t|
@@ -28,9 +53,13 @@ ActiveRecord::Schema.define(version: 20160504022118) do
     t.string   "user_change_details"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "user_id"
+    t.integer  "user_document_id"
   end
 
   add_index "user_arguments", ["document_id"], name: "index_user_arguments_on_document_id", using: :btree
+  add_index "user_arguments", ["user_document_id"], name: "index_user_arguments_on_user_document_id", using: :btree
+  add_index "user_arguments", ["user_id"], name: "index_user_arguments_on_user_id", using: :btree
 
   create_table "user_case_infos", force: :cascade do |t|
     t.integer  "user_id"
@@ -79,11 +108,15 @@ ActiveRecord::Schema.define(version: 20160504022118) do
   create_table "user_references", force: :cascade do |t|
     t.integer  "document_id"
     t.text     "attachment"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.integer  "user_document_id"
   end
 
   add_index "user_references", ["document_id"], name: "index_user_references_on_document_id", using: :btree
+  add_index "user_references", ["user_document_id"], name: "index_user_references_on_user_document_id", using: :btree
+  add_index "user_references", ["user_id"], name: "index_user_references_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -103,10 +136,20 @@ ActiveRecord::Schema.define(version: 20160504022118) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "document_user_case_infos", "user_case_infos"
+  add_foreign_key "document_user_case_infos", "user_documents"
+  add_foreign_key "document_user_informations", "documents"
+  add_foreign_key "document_user_informations", "user_documents"
+  add_foreign_key "document_user_informations", "user_informations"
+  add_foreign_key "document_user_informations", "users"
   add_foreign_key "user_arguments", "documents"
+  add_foreign_key "user_arguments", "user_documents"
+  add_foreign_key "user_arguments", "users"
   add_foreign_key "user_case_infos", "users"
   add_foreign_key "user_documents", "documents"
   add_foreign_key "user_documents", "users"
   add_foreign_key "user_informations", "users"
   add_foreign_key "user_references", "documents"
+  add_foreign_key "user_references", "user_documents"
+  add_foreign_key "user_references", "users"
 end

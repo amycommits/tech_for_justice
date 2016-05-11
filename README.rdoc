@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Objectives:
+1) taglibs - get at least one to work
+2) simulate REEport workflow so that I gain a deeper understanding of how it works
