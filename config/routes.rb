@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resources :user_informations do
+  
     resources :user_documents do
       resources :user_informations
       resources :document_user_informations
@@ -43,7 +43,6 @@ Rails.application.routes.draw do
       resources :user_references
       resources :review
     end
-  end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

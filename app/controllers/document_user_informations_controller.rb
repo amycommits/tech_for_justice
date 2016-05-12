@@ -1,7 +1,7 @@
 class DocumentUserInformationsController < ApplicationController
-	after_initialize :create_information 
 
-	 @doc_id = [params[:document_id]]
+	def show
+  end
 
 	 def new
 
