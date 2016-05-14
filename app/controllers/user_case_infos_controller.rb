@@ -1,5 +1,6 @@
 class UserCaseInfosController < ApplicationController
   before_action :set_user_case_info, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /user_case_infos
   # GET /user_case_infos.json

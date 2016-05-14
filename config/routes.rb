@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :user_references
   resources :user_arguments
   resources :user_case_infos
+  resources :base_workflow
  # resources :user_documents
   resources :documents
   resources :user_informations
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'documents#index'
+   root 'base_workflow#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -46,6 +47,13 @@ Rails.application.routes.draw do
       resources :user_references
       resources :review
     end
+
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

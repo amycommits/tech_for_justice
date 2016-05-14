@@ -8,7 +8,7 @@
 <!--
 This was exciting because I can pass params as params
 < %= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> -->
-
+<%= link_to 'Log out', destroy_user_session_path %>
 
 <h2> New Documents </h2>
 <%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> 

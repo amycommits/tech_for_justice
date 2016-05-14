@@ -1,5 +1,6 @@
 class UserInformationsController < ApplicationController
   before_action :set_user_information, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /user_informations
   # GET /user_informations.json

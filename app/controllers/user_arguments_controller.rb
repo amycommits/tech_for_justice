@@ -1,5 +1,6 @@
 class UserArgumentsController < ApplicationController
   before_action :set_user_argument, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /user_arguments
   # GET /user_arguments.json

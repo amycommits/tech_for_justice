@@ -1,5 +1,6 @@
 class UserDocumentsController < ApplicationController
   before_action :set_user_document, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /user_documents
   # GET /user_documents.json
