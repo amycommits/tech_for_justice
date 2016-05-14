@@ -46,7 +46,7 @@ class UserCaseInfosController < ApplicationController
       if @user_case_info.update(user_case_info_params)
               @argument = UserArgument.where(:user_document)
               @user_document = [params[:user_document_id]]
-             format.html { redirect_to edit_user_document_user_argument_path(79,5) }
+             format.html { redirect_to edit_user_document_user_argument_path(2,1) }
              format.json { render :show, status: :ok, location: @user_case_info }
       else
         format.html { render :edit }

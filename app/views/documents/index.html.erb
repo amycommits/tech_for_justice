@@ -3,7 +3,8 @@
 <h1>Choose Your Document</h1>
 
 <h2>Update an existing Document</h2>
- <%= link_to("Update Expungement Form", edit_document_user_document_path(1,79)) %> 
+ <!--< %= link_to("Update Expungement Form", edit_document_user_document_path(1,79)) %> -->
+ <%= link_to("Update Expungement Form", edit_document_user_document_path(1,2)) %> 
 
 <!--
 This was exciting because I can pass params as params
@@ -11,7 +12,8 @@ This was exciting because I can pass params as params
 <%= link_to 'Log out', destroy_user_session_path %>
 
 <h2> New Documents </h2>
-<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> 
+<!-- < %= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> -->
+<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> 1}) %> 
 <ol>
   <li>User Information</li><span>/user_informations/3/edit</span>
   <li>User Document</li><span>/documents/1/user_documents/79/edit</span>

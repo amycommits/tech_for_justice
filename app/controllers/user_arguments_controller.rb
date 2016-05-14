@@ -43,7 +43,7 @@ class UserArgumentsController < ApplicationController
   def update
     respond_to do |format|
       if @user_argument.update(user_argument_params)
-        format.html { redirect_to edit_user_document_user_reference_path(79,1) }
+        format.html { redirect_to edit_user_document_user_reference_path(2,1) }
         format.json { render :show, status: :ok, location: @user_argument }
       else
         format.html { render :edit }
