@@ -1,10 +1,7 @@
 <h1>Editing User Document</h1>
 
 <%= render 'form' %>
-<% @user_doc_id = @user_document.id %>
-<%= link_to("New Expungement Form", { controller: "user_informations", action: "edit",:document_id=> @user_doc_id}) %> 
-<label id="user_doc_id"><%= @user_doc_id %></label>
 
-<%= link_to "Next - User Information", document_user_information_path(@user_doc_id, current_user.id) %>
+<%= link_to "Next - User Information", edit_user_document_user_case_info_path(@user_document.id, current_user.id) %>
 
 

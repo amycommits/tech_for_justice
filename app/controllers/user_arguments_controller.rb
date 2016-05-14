@@ -4,7 +4,6 @@ class UserArgumentsController < ApplicationController
   # GET /user_arguments
   # GET /user_arguments.json
   def index
-    #@existing_argument = UserArgument.where(user_id: current_user.id, document_id: 1) || nil
     @user_arguments = UserArgument.all
   end
 
@@ -16,7 +15,6 @@ class UserArgumentsController < ApplicationController
   # GET /user_arguments/new
   def new
     @user_argument = UserArgument.new
-    @doc_id = [params[:document_id]]
   end
 
   # GET /user_arguments/1/edit
@@ -44,7 +42,7 @@ class UserArgumentsController < ApplicationController
   def update
     respond_to do |format|
       if @user_argument.update(user_argument_params)
-        format.html { redirect_to @user_argument, notice: 'User argument was successfully updated.' }
+        format.html { redirect_to edit_user_document_user_reference_path(79,1) }
         format.json { render :show, status: :ok, location: @user_argument }
       else
         format.html { render :edit }
@@ -63,10 +61,6 @@ class UserArgumentsController < ApplicationController
     end
   end
 
-  def existing_argument
-    @existing_argument = UserArgument.where(user_id: current_user.id, document_id: 1)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_argument
@@ -75,6 +69,6 @@ class UserArgumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_argument_params
-      params.require(:user_argument).permit(:document_id, :overall_reason, :user_change_details,:user_id)
+      params.require(:user_argument).permit(:user_document_id, :overall_reason, :user_change_details)
     end
 end

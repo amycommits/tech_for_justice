@@ -29,7 +29,7 @@ class UserDocumentsController < ApplicationController
     @user_document = UserDocument.new(user_document_params)
     @user_information_info = UserInformation.where(user_id: current_user.id)
    if @user_document.save
-      redirect_to edit_user_document_path(@user_document)
+      redirect_to edit_user_document_user_case_info_path(@user_doc_id, current_user.id)
     else
       redirect_to 'new'
     end
@@ -42,14 +42,10 @@ class UserDocumentsController < ApplicationController
     @user_information_info = UserInformation.where(user_id: current_user.id)
    
     respond_to do |format|
-      if @user_document.update(user_document_params)
-        format.html { redirect_to @document_user_case_info }
+        format.html { redirect_to edit_user_document_user_case_info_path(@user_document.id, current_user.id) }
         format.json { render :show, status: :ok, location: @user_document || 0 }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_document.errors, status: :unprocessable_entity }
+     
       end
-    end
   end
 
   def go_to_user_info

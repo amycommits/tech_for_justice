@@ -1,6 +1,8 @@
 <h1>Editing User Argument</h1>
 
 <%= render 'form' %>
+<%= link_to "Next - User Reference", edit_user_document_user_reference_path(params[:user_document_id],1) %>
+
 
 <%= link_to 'Show', @user_argument %> |
 <%= link_to 'Back', user_arguments_path %>

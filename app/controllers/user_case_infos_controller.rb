@@ -40,10 +40,13 @@ class UserCaseInfosController < ApplicationController
   # PATCH/PUT /user_case_infos/1
   # PATCH/PUT /user_case_infos/1.json
   def update
+    #@user_argument = UserArgument.where(:user_document_id [params[:user_document_id]])
     respond_to do |format|
       if @user_case_info.update(user_case_info_params)
-        format.html { redirect_to @user_case_info, notice: 'User case info was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_case_info }
+              @argument = UserArgument.where(:user_document)
+              @user_document = [params[:user_document_id]]
+             format.html { redirect_to edit_user_document_user_argument_path(79,5) }
+             format.json { render :show, status: :ok, location: @user_case_info }
       else
         format.html { render :edit }
         format.json { render json: @user_case_info.errors, status: :unprocessable_entity }
@@ -69,6 +72,6 @@ class UserCaseInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_case_info_params
-      params.require(:user_case_info).permit(:user_id, :docket_id, :charged_with, :charge_type, :police_description, :case_conclusion, :is_case_pending, :case_end_date)
+      params.require(:user_case_info).permit(:user_id, :docket_id, :charged_with, :charge_type, :police_description, :case_conclusion, :is_case_pending, :case_end_date, :document_id)
     end
 end

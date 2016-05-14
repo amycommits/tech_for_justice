@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :document_user_case_infos
-  resources :document_user_informations
+ # resources :document_user_case_infos
+ # resources :document_user_informations
   resources :user_references
   resources :user_arguments
   resources :user_case_infos
-  resources :user_documents
+ # resources :user_documents
   resources :documents
   resources :user_informations
   devise_for :users
@@ -34,10 +34,13 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  resources :documents do
+    resources :user_documents
+  end
   
     resources :user_documents do
       resources :user_informations
-      resources :document_user_informations
+      #resources :document_user_informations
       resources :user_case_infos
       resources :user_arguments
       resources :user_references

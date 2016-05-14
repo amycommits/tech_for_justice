@@ -1,16 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing User Arguments</h1>
-<%if @existing_argument.present? %>
-<h2><%=@existing_argument.ids%></h2>
-<h3><link_to "Arguments" </h3>
-<% end %>
+
 <table>
   <thead>
     <tr>
-      <th>Document</th>
-      <th>Overall reason</th>
-      <th>User change details</th>
+      <th>User document</th>
+      <th>Main reason</th>
+      <th>Other reason</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +15,7 @@
   <tbody>
     <% @user_arguments.each do |user_argument| %>
       <tr>
-        <td><%= user_argument.document %></td>
+        <td><%= user_argument.user_document_id %></td>
         <td><%= user_argument.overall_reason %></td>
         <td><%= user_argument.user_change_details %></td>
         <td><%= link_to 'Show', user_argument %></td>

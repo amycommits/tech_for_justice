@@ -28,8 +28,14 @@ class UserInformationsController < ApplicationController
 
     respond_to do |format|
       if @user_information.save
-        format.html { redirect_to @user_information, notice: 'User information was successfully created.' }
-        format.json { render :show, status: :created, location: @user_information }
+        if params[:document_id].present? 
+          format.html { redirect_to user_document_user_case_infos_path(params[:document_id]) }
+          format.json { render :show, status: :created, location: @user_information }
+
+        else
+          format.html { redirect_to @user_information, notice: 'User information was successfully created.' }
+          format.json { render :show, status: :created, location: @user_information }
+        end
       else
         format.html { render :new }
         format.json { render json: @user_information.errors, status: :unprocessable_entity }
