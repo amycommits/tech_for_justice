@@ -20,9 +20,9 @@ class UserCaseInfosController < ApplicationController
 
   # GET /user_case_infos/1/edit
   def edit
-    if !@UserCaseInfo.where(user_id: current_user.id).present?
+    #if !@UserCaseInfo.where(user_id: current_user.id).present?
       
-    end
+    #end
   end
 
   # POST /user_case_infos
