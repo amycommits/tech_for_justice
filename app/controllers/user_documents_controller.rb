@@ -15,8 +15,7 @@ class UserDocumentsController < ApplicationController
 
   # GET /user_documents/new
   def new
-    @user_document = UserDocument.new
-    @doc_id = [params[:document_id]]
+      @user_document = current_user.user_documents.build
   end
 
   # GET /user_documents/1/edit
@@ -27,7 +26,7 @@ class UserDocumentsController < ApplicationController
   # POST /user_documents
   # POST /user_documents.json
   def create
-    @user_document = UserDocument.new(user_document_params)
+    @user_document = current_user.user_documents.build(user_document_params)
     @user_information_info = UserInformation.where(user_id: current_user.id)
    if @user_document.save
       redirect_to edit_user_document_user_case_info_path(@user_doc_id, current_user.id)
