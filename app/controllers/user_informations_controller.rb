@@ -16,6 +16,8 @@ class UserInformationsController < ApplicationController
   # GET /user_informations/new
   def new
     @user_information = UserInformation.new
+    #@user_case_info = UserDocument.find(params[:user_document_id]).user_case_infos
+    @user_doc = params[:user_document_id]
   end
 
   # GET /user_informations/1/edit
@@ -25,18 +27,13 @@ class UserInformationsController < ApplicationController
   # POST /user_informations
   # POST /user_informations.json
   def create
-    @user_information = UserInformation.new(user_information_params)
-
+    @user_doc = params[:user_document_id]
+    @user_information = UserInformation.new(user_information_params,params[:user_document_id])
+    #no matter what, this is supposed to go to the user case information index
     respond_to do |format|
       if @user_information.save
-        if params[:document_id].present? 
-          format.html { redirect_to user_document_user_case_infos_path(params[:document_id]) }
+          format.html { redirect_to new_user_document_user_case_infos_path(@user_doc) }
           format.json { render :show, status: :created, location: @user_information }
-
-        else
-          format.html { redirect_to @user_information, notice: 'User information was successfully created.' }
-          format.json { render :show, status: :created, location: @user_information }
-        end
       else
         format.html { render :new }
         format.json { render json: @user_information.errors, status: :unprocessable_entity }
@@ -47,11 +44,13 @@ class UserInformationsController < ApplicationController
   # PATCH/PUT /user_informations/1
   # PATCH/PUT /user_informations/1.json
   def update
-    respond_to do |format|
+        @doc_id = UserDocument.where(user_id: current_user.id).last
+      respond_to do |format|
+     
       if @user_information.update(user_information_params)
-        format.html { redirect_to @user_information, notice: 'User information was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_information }
-      else
+          format.html { redirect_to user_document_user_case_infos_path(@doc_id) }
+          format.json { render :show, status: :created, location: @user_information }
+     else
         format.html { render :edit }
         format.json { render json: @user_information.errors, status: :unprocessable_entity }
       end

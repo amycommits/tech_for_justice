@@ -1,6 +1,7 @@
 <h1>Editing User Information</h1>
 
 <%= render 'form' %>
+<%= link_to 'User Case(s)', user_document_user_case_infos_path(params[:user_document_id]) %>
 
 <%= link_to 'Show', @user_information %> |
 <%= link_to 'Back', user_informations_path %>

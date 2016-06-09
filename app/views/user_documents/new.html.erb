@@ -2,6 +2,13 @@
 
 <%= render 'form' %>
 
+<h1> temp </h1>
+<% if !@user_info_id .nil? %>
+	<h2><%= @user_info_id.id  %></h2>
+<% else %>
+	<h2>Not present</h2>
+<%end%>
+
 
 
 <%= link_to 'Back', user_documents_path %>
