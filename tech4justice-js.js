@@ -6,9 +6,3 @@
 "<li><a href='contact.html'>Contact</a></li>" +
 "</ul>";
 
-$('.nav').on('click', function(el){
-  //remove current active
-  $('.active').removeClass('active')
-  $(this).addClass('active')
-})
-
