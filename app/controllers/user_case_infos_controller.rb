@@ -16,6 +16,7 @@ class UserCaseInfosController < ApplicationController
   # GET /user_case_infos/new
   def new
     @user_case_info = UserCaseInfo.new
+    #@user_case_info = UserDocument.user_case_info.new
   end
 
   # GET /user_case_infos/1/edit
