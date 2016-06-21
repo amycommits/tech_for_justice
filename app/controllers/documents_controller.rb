@@ -22,9 +22,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-    # @post = current_user.posts.build
-    #@document = Document.new
-    @document = current_user.documents.build
+    @document = Document.new
   end
 
   # GET /documents/1/edit
@@ -34,8 +32,7 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
-   # @document = Document.new(document_params)
-   @document = current_user.documents.build(post_params)
+    @document = Document.new(document_params)
    
 
     respond_to do |format|

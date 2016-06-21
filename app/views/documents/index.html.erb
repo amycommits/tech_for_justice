@@ -1,11 +1,16 @@
 
 <p id="notice"><%= notice %></p>
+<%= current_user.email %>
 <%= link_to 'Log out', destroy_user_session_path %>
 <h1>Choose Your Document</h1>
 
 <h2>Update an existing Document</h2>
  <!--< %= link_to("Update Expungement Form", edit_document_user_document_path(1,79)) %> -->
- <%= link_to("Update Expungement Form", edit_document_user_document_path(1,2)) %> 
+ <!--< %= link_to("Update Expungement Form", edit_document_user_document_path(1,2)) %> -->
+
+ <% current_user.user_documents.each do |doc| %>
+    <%= link_to("Update Expungement Form", edit_document_user_document_path(doc.document_id,doc.id)) %>
+ <% end %>
 
 <!--
 This was exciting because I can pass params as params

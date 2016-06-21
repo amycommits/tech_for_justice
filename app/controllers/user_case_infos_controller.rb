@@ -1,5 +1,5 @@
 class UserCaseInfosController < ApplicationController
-  before_action :set_user_case_info, only: [:show, :edit, :update, :destroy]
+  before_action  only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   # GET /user_case_infos
@@ -16,6 +16,7 @@ class UserCaseInfosController < ApplicationController
   # GET /user_case_infos/new
   def new
     @user_case_info = UserCaseInfo.new
+    #@user_case_info = UserDocument.user_case_info.new
   end
 
   # GET /user_case_infos/1/edit
@@ -28,7 +29,8 @@ class UserCaseInfosController < ApplicationController
   # POST /user_case_infos
   # POST /user_case_infos.json
   def create
-    @user_case_info = UserCaseInfo.new(user_case_info_params)
+    #@user_case_info = UserCaseInfo.new(user_case_info_params)
+    @user_case_info = current_user.user_case_infos.build(user_case_info_params)
 
     respond_to do |format|
       if @user_case_info.save
