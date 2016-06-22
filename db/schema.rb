@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511021304) do
+ActiveRecord::Schema.define(version: 20160622010155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,24 @@ ActiveRecord::Schema.define(version: 20160511021304) do
     t.text     "form"
   end
 
+  create_table "map_user_document_user_infos", force: :cascade do |t|
+    t.integer "user_document_id"
+    t.integer "user_information_id"
+  end
+
+  add_index "map_user_document_user_infos", ["user_document_id"], name: "index_map_user_document_user_infos_on_user_document_id", using: :btree
+  add_index "map_user_document_user_infos", ["user_information_id"], name: "index_map_user_document_user_infos_on_user_information_id", using: :btree
+
+  create_table "prototypes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "static_contents", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_arguments", force: :cascade do |t|
     t.integer  "document_id"
     t.string   "overall_reason"
@@ -72,8 +90,10 @@ ActiveRecord::Schema.define(version: 20160511021304) do
     t.datetime "case_end_date"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "user_document_id"
   end
 
+  add_index "user_case_infos", ["user_document_id"], name: "index_user_case_infos_on_user_document_id", using: :btree
   add_index "user_case_infos", ["user_id"], name: "index_user_case_infos_on_user_id", using: :btree
 
   create_table "user_documents", force: :cascade do |t|
@@ -142,9 +162,12 @@ ActiveRecord::Schema.define(version: 20160511021304) do
   add_foreign_key "document_user_informations", "user_documents"
   add_foreign_key "document_user_informations", "user_informations"
   add_foreign_key "document_user_informations", "users"
+  add_foreign_key "map_user_document_user_infos", "user_documents"
+  add_foreign_key "map_user_document_user_infos", "user_informations"
   add_foreign_key "user_arguments", "documents"
   add_foreign_key "user_arguments", "user_documents"
   add_foreign_key "user_arguments", "users"
+  add_foreign_key "user_case_infos", "user_documents"
   add_foreign_key "user_case_infos", "users"
   add_foreign_key "user_documents", "documents"
   add_foreign_key "user_documents", "users"
