@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :prototypes
   resources :static_contents
+  #resources :wicked_document_steps
  # resources :document_user_case_infos
  # resources :document_user_informations
 
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
       resources :user_arguments
       resources :user_references
       resources :review
+      resources :wicked_document_steps
     end
 
   devise_scope :user do
