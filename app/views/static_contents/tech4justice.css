@@ -1,0 +1,103 @@
+﻿.pageheader {
+background-color: #1b2845;
+height:125px;
+color: #f2f5ff;
+font-size: 24px;
+font-weight: bold;
+padding-top: 30px;
+padding-left: 30px;
+}
+
+.textfont {
+font-family: Tahoma;
+}
+
+.headerborder {
+background-color: #848fa5;
+height: 10px;
+}
+
+.paratext {
+font-size: 16px;
+color: #1b2845;
+line-height: 20px;
+}
+
+.fullcontaner {
+background-color: #f2f5ff;
+}
+
+input[type=button] {
+    width: 150px;
+    height: 30px;
+    background-color: #1b2845;
+    color: #ff6600;
+    font-weight: bold;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 350px;
+    height: 150px;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+}
+.instructional {
+  width:25%;
+  border-right: solid;
+  border-right-color: #848fa5;
+  float: left;
+}
+
+.highlighted-text {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.doc-container {
+  width:73%;
+  float: right;
+}
+
+ul#menu {
+   list-style-type: none;
+    background-color: #5899e2;
+    height: 30px;
+    padding-top:13px;
+    padding-left: 20px;
+    font-size: 14px;
+    margin-top: -1px;
+}
+
+ul#menu li {
+    display: inline;
+     margin: 0px 15px;   
+}
+
+ul#menu li a {
+    background-color: #5899e2;
+    text-decoration: none;
+    color: #1b2845;
+    font-weight: bold;
+    width: 100%;
+}
+
+ul#menu li a:hover {
+    color: #ff6600;
+    font-weight: bold;
+    background-color: #5899e2;
+}
+
+
+
+
+
+
+
+
