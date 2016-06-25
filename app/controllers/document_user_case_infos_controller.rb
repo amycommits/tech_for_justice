@@ -1,7 +1,7 @@
 class DocumentUserCaseInfosController < ApplicationController
   before_action :set_document_user_case_info, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  layout "form_layout", except: :index
 
   # GET /document_user_case_infos
   # GET /document_user_case_infos.json

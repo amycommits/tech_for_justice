@@ -1,27 +1,20 @@
 <header id="main-header">
   <nav>
+
   	<div class="site-title">
+        		<%= link_to "Tech for Justice", "/", :class => "logo pull-left" %>
+		</div>
+
+		<div id="site-nav">
 	    <div class="container">
-	    	<div class="row">
-	    		<div class="col-lg-12 col-xs-12">
-	        		<%= link_to "Tech for Justice", "/", :class => "logo pull-left" %>
-	        	</div>
-	        </div>
+	      <ul class="nav-primary" role="navigation">
+	        <li><%= link_to "Link 1", "/" %></li>
+	        <li><%= link_to "Link 2", "/" %></li>
+	        <li><%= link_to "Link 3", "/" %></li>
+	        <li><%= link_to "Link 4", "/" %></li>
+	      </ul>
 	    </div>
-	</div>
-	<div id="site-nav">
-	    <div class="container">
-	        <div class="row">
-	        	<div class="col-lg-12 col-xs-12">
-			        <ul class="nav-primary" role="navigation">
-			          <li><%= link_to "Link 1", "/" %></li>
-			          <li><%= link_to "Link 2", "/" %></li>
-			          <li><%= link_to "Link 3", "/" %></li>
-			          <li><%= link_to "Link 4", "/" %></li>
-			        </ul>
-	    		</div>
-	    	</div>
-	    </div>
-	</div>
+		</div>
+
   </nav>
 </header>
