@@ -1,4 +1,19 @@
+@import "variables";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "tech4justice";
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	font-family: $bodyfont;
+}
+
+@import "mixins";
+
+// styles related to the page layout
+@import "layout";
+
+
+// Styles related to the form progress sidebar
+@import "form_navigation";
+
