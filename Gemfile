@@ -18,8 +18,9 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
-	gem 'rspec-rails','~> 3.0'
-	gem 'capybara'
+  gem 'capybara'
+  gem 'rails-erd'
+  gem 'rspec-rails','~> 3.0'
 end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
