@@ -1,4 +1,3 @@
-
 .form-wrap {
 	@include flex(1);
 	@extend %flexbox;
@@ -8,11 +7,43 @@
 	background-color: $lightgray;
 	width: 100%;
 }
+	.form-navigation__list, .form-navigation__list-item {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+.form-step {
+	padding: $base-padding;
+	border-bottom: 1px solid #fff;
+}
+	.form-step__name {
+		font-size: 1.4em;
+		margin: 0;
+	}
+	.form-step__link {
+		color: inherit;
+		&:hover {
+			text-decoration: none;
+			color: $lightblue;
+		}
+	}
+
+
+
+
+
+
+
 
 .form-body {
 	width: 100%;
 	padding: $base-padding;
 }
+
+
+
+
 @media (min-width: 768px) {
 	.form-navigation {
 		@include flex(0, 0, 300px);
