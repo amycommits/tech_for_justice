@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :views
-  devise_for :admins
   resources :prototypes
   resources :static_contents
  # resources :document_user_case_infos
