@@ -5,4 +5,6 @@ $darkgray: #848FA5;
 $orange:#FF6600;
 $lightgray:#F2F5FF;
 
-$roboto:'Roboto', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,900);
+
+$roboto: "Roboto", Helvetica, Arial, sans-serif;

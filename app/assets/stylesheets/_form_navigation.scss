@@ -1,0 +1,24 @@
+
+.form-wrap {
+	@include flex(1);
+	@extend %flexbox;
+	@include flex-wrap(wrap);
+}
+.form-navigation {
+	background-color: $lightgray;
+	width: 100%;
+}
+
+.form-body {
+	background-color: $orange;
+	width: 100%;
+
+}
+@media (min-width: 768px) {
+	.form-navigation {
+		@include flex(0, 0, 300px);
+	}
+	.form-body {
+		@include flex(1);
+	}
+}
