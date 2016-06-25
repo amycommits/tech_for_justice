@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "form_layout", except: :index
 
   respond_to :html, :json
   layout "form_layout", except: :index
