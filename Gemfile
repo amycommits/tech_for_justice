@@ -19,6 +19,7 @@ gem 'prawn'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
+  gem 'annotate'
   gem 'capybara'
   gem 'rails-erd'
   gem 'rspec-rails','~> 3.0'
