@@ -1,0 +1,53 @@
+
+/*doc
+---
+title: Buttons
+name: button
+category: Base CSS
+---
+
+Button styles can be applied to any element. Typically you'll want to use either a `<button>` or an `<a>` element:
+
+```html_example
+
+<div class="dark-background">
+	<h3 class="text-white">On a dark background</h3>
+
+	<button class="btn btn-white">Click</button>
+	<br>
+	<br>
+
+	<a href="#" class="action-link">Log in</a>
+	
+</div>
+
+```
+*/ 
+
+.dark-background {
+	background: $darkblue;
+	padding: 10px;
+	color: #fff;
+}
+
+.btn-white {
+	background-color: #fff;
+	border: 2px solid #fff;
+	border-radius: 0;
+	color: $darkblue;
+	font-weight: 500;
+
+	&:hover {
+		background-color: transparent;
+		color: #fff;
+	}
+}
+
+.action-link {
+	color: $orange;
+	font-weight: 500;
+	&:hover {
+		color: lighten($orange, 10%);
+	}
+}
+
