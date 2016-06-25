@@ -2,10 +2,10 @@
 # All paths should be relative to there
 
 # The directory containing the source files to parse recursively
-source: ./sass
+source: ./app/assets/stylesheets
 
 # The directory that hologram will build to
-destination: ./docs
+destination: ./public/docs
 
 # The assets needed to build the docs (includes header.html,
 # footer.html, etc)
@@ -26,13 +26,13 @@ code_example_renderers: ./code_example_renderers
 # Any other asset folders that need to be copied to the destination
 # folder. Typically this will include the css that you are trying to
 # document. May also include additional folders as needed.
-dependencies:
-  - ./build
+# dependencies:
+#   - ./build
 
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documentation assets
 # folder instead of specifying this config.
-index: basics
+index: button
 
 # To additionally output navigation for top level sections, set the value to
 # 'section'. To output navigation for sub-sections,

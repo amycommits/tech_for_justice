@@ -89,3 +89,33 @@ textarea {
   width:73%;
   float: right;
 }
+
+#site-nav {
+   list-style-type: none;
+   display:inline-block;
+    padding-top:-30px;
+    padding-left: 20px;
+
+    ul {
+        padding-left:10px;
+        margin-bottom: 0;
+    }
+
+    ul li {
+        display: inline;
+        margin-right: 15px;
+        font-size: 14px;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    ul li a:hover {
+        color: #fff;
+        background-color:none !important;
+    }
+}
