@@ -35,6 +35,7 @@
 </table>
 
 <br>
+
 <h1>New User case info </h1>
 <%= render partial: 'form' %>
 <p/>
@@ -43,3 +44,6 @@
 <% if !params[:user_document_id].nil?%>
 <%= link_to 'User Argument(s)', user_document_user_arguments_path(params[:user_document_id]) %>
 <% end %>
+
+<%= link_to 'New User case info', new_user_case_info_path %>
+<br/>
