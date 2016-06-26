@@ -33,11 +33,16 @@ Rails.application.routes.draw do
     resources :review
   end
 
-  get 'about', to: 'static_content#about', as: :about
-  get 'contact', to: 'static_content#contact', as: :contact
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  get 'about', to: 'application#about'
+  get 'contact', to: 'application#contact'
+
   get 'mock/personal_info', to: 'prototypes#personal_info'
   get 'mock/homepage', to: 'prototypes#homepage'
   get 'mock/documents', to: 'prototypes#documents'
+
 
   #For pdf testing
   get 'documents', to: 'documents#index'

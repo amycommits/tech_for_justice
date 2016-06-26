@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625190044) do
+ActiveRecord::Schema.define(version: 20160626134117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,11 +56,6 @@ ActiveRecord::Schema.define(version: 20160625190044) do
   add_index "map_user_document_user_infos", ["user_information_id"], name: "index_map_user_document_user_infos_on_user_information_id", using: :btree
 
   create_table "prototypes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "static_contents", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
