@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   get 'mock/personal_info', to: 'prototypes#personal_info'
   get 'mock/homepage', to: 'prototypes#homepage'
   get 'mock/documents', to: 'prototypes#documents'
+
+  #For pdf testing
+  get 'documents', to: 'documents#index'
+
 end
