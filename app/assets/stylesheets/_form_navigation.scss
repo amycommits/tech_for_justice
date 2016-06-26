@@ -1,28 +1,3 @@
-.two-column {
-	@include flex(1);
-	@extend %flexbox;
-	@include flex-wrap(wrap);
-}
-	.two-column__sidebar {
-		width: 100%;
-	}	
-	.two-column__body {
-		width: 100%;
-		padding: $base-padding;
-	}
-
-
-	@media (min-width: 768px) {
-		.two-column__sidebar {
-			@include flex(0, 0, 300px);
-		}
-		.two-column__body {
-			@include flex(1);
-		}
-	}
-
-
-
 .form-navigation {
 	background-color: $lightgray;
 }
