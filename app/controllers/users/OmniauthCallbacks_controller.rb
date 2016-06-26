@@ -10,5 +10,6 @@ class Users::OmniauthCallbacksController < Application::Base
       session["devise.google_data"] = oauth_response.except(:extra)
       params[:error] = :account_not_found
       do_failure_things
-end
+	end
+  end
 end
