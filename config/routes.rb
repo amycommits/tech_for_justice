@@ -47,5 +47,5 @@ Rails.application.routes.draw do
   get 'mock/homepage', to: 'prototypes#homepage'
   get 'mock/documents', to: 'prototypes#documents'
 
-  get 'form', to: 'documents#expungement_form'
+  get 'documents', to: 'documents#index'
 end
