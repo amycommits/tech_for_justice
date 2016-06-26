@@ -14,4 +14,5 @@
 //= bootstrap-sprockets 
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.tooltipster.min.js
 //= require_tree .

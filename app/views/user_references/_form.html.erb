@@ -1,3 +1,9 @@
+<script>
+        $(document).ready(function() {
+            $('.tooltips').tooltipster({trigger: 'click', position: 'right'});
+        });
+</script>
+
 <%= form_for(@user_reference, remote: true) do |f| %>
   <% if @user_reference.errors.any? %>
     <div id="error_explanation">
@@ -19,20 +25,20 @@
     <%= f.text_field :user_document_id, value: params[:user_document_id] %>
   </div>
   <div class="field">
-    <%= f.label :attachment %><br>
-    <%= f.text_area :attachment %>
+    <%= f.label :attachment %>
+    <%= f.text_field :attachment, :title => 'Upload Your Attachent', :class => 'tooltips'   %>
   </div>
   <div class="field">
     <%= f.label :reference_name %>
-    <%= f.text_field :reference_name %>
+    <%= f.text_field :reference_name, :title => 'Enter Your References Name', :class => 'tooltips'   %>
   </div>
   <div class="field">
     <%= f.label :relation_to_user %>
-    <%= f.text_field :relation_to_user %>
+    <%= f.text_field :relation_to_user, :title => 'Enter Your Relationship to the Reference', :class => 'tooltips'   %>
   </div>
   <div class="field">
     <%= f.label :recommendation %><br />
-    <%= f.text_area :recommendation %>
+    <%= f.text_area :recommendation, :title => 'Enter the Recommendation', :class => 'tooltips'   %>
   </div>
   <div class="actions">
     <%= f.submit %>

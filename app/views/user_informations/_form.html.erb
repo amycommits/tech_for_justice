@@ -1,3 +1,9 @@
+<script>
+        $(document).ready(function() {
+            $('.tooltips').tooltipster({trigger: 'click', position: 'right'});
+        });
+</script>
+
 <%= form_for(@user_information, remote: true)do |f| %>
   <% if @user_information.errors.any? %>
     <div id="error_explanation">
@@ -17,47 +23,47 @@
   </div>
   <div class="field">
     <%= f.label :pd_id %><br>
-    <%= f.text_area :pd_id %>
+    <%= f.text_field :pd_id, :title => 'Enter Your Police Case ID', :class => 'tooltips' %>
   </div>
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_area :first_name %>
+    <%= f.text_field :first_name, :title => 'Enter Legal First Name', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_area :last_name %>
+    <%= f.text_field :last_name, :title => 'Enter Legal Last Name', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :middle_name %><br>
-    <%= f.text_area :middle_name %>
+    <%= f.text_field :middle_name, :title => 'Enter Legal Middle Name', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :preefix_suffix %><br>
-    <%= f.text_area :preefix_suffix %>
+    <%= f.text_field :preefix_suffix, :title => 'Enter Legal Prefix/Suffix for your Name', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_area :title %>
+    <%= f.text_field :title, :title => 'Enter Title', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :address_line_1 %><br>
-    <%= f.text_area :address_line_1 %>
+    <%= f.text_field :address_line_1, :title => 'Enter Legal address', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :address_line2 %><br>
-    <%= f.text_area :address_line2 %>
+    <%= f.text_field :address_line2, :title => 'Enter Legal address', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_area :city %>
+    <%= f.text_field :city, :title => 'Enter Name of City', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_area :state %>
+    <%= f.text_field :state, :title => 'Enter Name of State', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :phone_number %><br>
-    <%= f.text_area :phone_number %>
+    <%= f.text_field :phone_number, :title => 'Enter Phone Number', :class => 'tooltips'  %>
   </div>
   <div class="actions">
     <%= f.submit %>

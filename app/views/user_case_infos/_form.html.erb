@@ -1,3 +1,9 @@
+<script>
+        $(document).ready(function() {
+            $('.tooltips').tooltipster({trigger: 'click', position: 'right'});
+        });
+</script>
+
 <%= form_for(@user_case_info, remote: true) do |f| %>
   <% if @user_case_info.errors.any? %>
     <div id="error_explanation">
@@ -14,29 +20,29 @@
 
   <div class="field">
     <%= f.label :docket_id %><br>
-    <%= f.text_field :docket_id %>
+    <%= f.text_field :docket_id, :title => 'Enter Your Docket ID', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :charged_with %><br>
-    <%= f.text_field :charged_with %>
+    <%= f.text_field :charged_with, :title => 'Enter What You are Charged With', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :charge_type %><br>
-    <%= f.text_area :charge_type %>
+    <%= f.text_field :charge_type, :title => 'Enter Your Charge Type', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :police_description %><br>
-    <%= f.text_area :police_description %>
+    <%= f.text_field :police_description, :title => 'Enter the Police Description for Your Charge', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :case_conclusion %><br>
-    <%= f.text_area :case_conclusion %>
+    <%= f.text_area :case_conclusion, :title => 'Enter the Conclusion for Your Case', :class => 'tooltips'  %>
   </div>
   <div class="field">
     <%= f.label :is_case_pending %><br>
-    <%= f.text_field :is_case_pending %>
+    <%= f.text_field :is_case_pending, :title => 'Is Your Case Still Pending', :class => 'tooltips'  %>
   </div>
-  <div class="field">
+  <div class="field tooltips" title = "Enter the Date Your Case Ended" >
     <%= f.label :case_end_date %><br>
     <%= f.datetime_select :case_end_date %>
   </div>
