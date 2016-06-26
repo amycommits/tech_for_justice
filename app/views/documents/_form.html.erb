@@ -12,17 +12,17 @@
     </div>
   <% end %>
 
-
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "Your Document Name" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :form %><br>
     <%= f.text_area :form %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit_button'%>
   </div>
-  
+
 <% end %>
