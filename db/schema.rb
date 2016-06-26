@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626134117) do
+ActiveRecord::Schema.define(version: 20160626160728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,33 +121,35 @@ ActiveRecord::Schema.define(version: 20160626134117) do
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree
 
   create_table "user_references", force: :cascade do |t|
-    t.integer  "document_id"
     t.text     "attachment"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.integer  "user_document_id"
+    t.string   "reference_name"
+    t.string   "relation_to_user"
+    t.string   "recommendation"
   end
 
-  add_index "user_references", ["document_id"], name: "index_user_references_on_document_id", using: :btree
   add_index "user_references", ["user_document_id"], name: "index_user_references_on_user_document_id", using: :btree
   add_index "user_references", ["user_id"], name: "index_user_references_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -187,7 +189,6 @@ ActiveRecord::Schema.define(version: 20160626134117) do
   add_foreign_key "user_documents", "documents"
   add_foreign_key "user_documents", "users"
   add_foreign_key "user_informations", "users"
-  add_foreign_key "user_references", "documents"
   add_foreign_key "user_references", "user_documents"
   add_foreign_key "user_references", "users"
 end

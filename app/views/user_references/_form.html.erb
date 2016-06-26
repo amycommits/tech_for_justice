@@ -22,7 +22,20 @@
     <%= f.label :attachment %><br>
     <%= f.text_area :attachment %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field">
+    <%= f.label :reference_name %>
+    <%= f.text_field :reference_name %>
   </div>
+  <div class="field">
+    <%= f.label :relation_to_user %>
+    <%= f.text_field :relation_to_user %>
+  </div>
+  <div class="field">
+    <%= f.label :recommendation %><br />
+    <%= f.text_area :recommendation %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'submit_button'%>
+  </div>
+
 <% end %>

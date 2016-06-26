@@ -8,14 +8,17 @@
   </head>
   <body>
     <div class="wrap">
+
       <%= render 'layouts/header' %>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-sm-10 col-xs-10 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1">
-            <%= yield %>
-          </div>
+
+      <div class="two-column">
+        <%= render 'layouts/sidebar' %>
+        <div class="two-column__body">
+          <%= yield %>
         </div>
+        
       </div>
+
     </div>
   </body>
 </html>
