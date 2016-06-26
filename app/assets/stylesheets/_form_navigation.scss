@@ -28,7 +28,11 @@
 
 .form-step {
 	font-weight: 300;
+
+	display: block;
+	position: relative;
 }
+
 	.form-step__link {
 		padding: 5px $base-padding;
 
@@ -80,5 +84,23 @@
 
 .form-step--active {
 	font-weight: 500;
+
+	&:after {
+		display: block;
+		position: absolute;
+		content: "";
+		height: 100%;
+
+		width: $base-padding;
+		left: 100%;
+		top: 0;
+
+		border-width: 18px 0 18px $base-padding;
+		border-style: solid;
+		border-color: #fff transparent;
+
+	  background-image: url('gray_texture.png');
+
+	}
 }
 
