@@ -1,4 +1,4 @@
-class Users::OmniauthCallbacksController < Application::Base
+class OmniauthCallbacksController < Application::Base
   def google_oauth2
     user = ::User.from_omniauth(oauth_response)
 
