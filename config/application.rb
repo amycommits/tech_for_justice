@@ -9,8 +9,8 @@ Bundler.require(*Rails.groups)
 module Tfj
   class Application < Rails::Application
      config.active_record.raise_in_transactional_callbacks = true
-     #config.fixture_replacement do |g|
+     # config.fixture_replacement do |g|
      #   g.fixture_replacement :factory_girl, dir: "spec/factories"
-     #end
+     # end
   end
 end
