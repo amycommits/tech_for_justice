@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def about 
-    render "static_contents/about.html"
+    render "static_content/about.html"
   end 
   def contact
-    render "static_contents/contact.html"
+    render "static_content/contact.html"
   end 
 
   protected 
