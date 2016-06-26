@@ -4,6 +4,9 @@ class BaseWorkflowController < ApplicationController
 	#@doc = new DocumentsController
 
 	#defining the variables from model
+
+	before_action :authenticate_user!
+
 	@documents = Document.all
 	def index
 		@expungement_form = Document.where(name: 'Expungement Motion')
@@ -14,4 +17,6 @@ class BaseWorkflowController < ApplicationController
 	def update_user_info
 
 	end
+
+
 end
