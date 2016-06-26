@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing User Case Infos</h1>
-
-<table>
+<h1>User Case Information</h1>
+<% if @user_case_infos.count > 0 %>
+<h2>Current Cases</h2>
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Docket</th>
@@ -15,7 +16,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @user_case_infos.each do |user_case_info| %>
       <tr>
@@ -33,11 +33,12 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
-<br>
+<br />
 
 
-<h1>New User case info </h1>
+<h2>Add a New Case</h2>
 <%= render partial: 'form' %>
 <p/>
 <%= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %>
