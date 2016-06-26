@@ -10,8 +10,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World"
+        pdf = DocumentListPdf.new
         send_data pdf.render, :filename => 'document.pdf', :type => "application/pdf", :disposition => 'inline'
       end
     end
