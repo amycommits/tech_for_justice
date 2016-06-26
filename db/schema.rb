@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625190044) do
+ActiveRecord::Schema.define(version: 20160626143715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,15 +126,16 @@ ActiveRecord::Schema.define(version: 20160625190044) do
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree
 
   create_table "user_references", force: :cascade do |t|
-    t.integer  "document_id"
     t.text     "attachment"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.integer  "user_document_id"
+    t.string   "reference_name"
+    t.string   "relation_to_user"
+    t.string   "recommendation"
   end
 
-  add_index "user_references", ["document_id"], name: "index_user_references_on_document_id", using: :btree
   add_index "user_references", ["user_document_id"], name: "index_user_references_on_user_document_id", using: :btree
   add_index "user_references", ["user_id"], name: "index_user_references_on_user_id", using: :btree
 
@@ -192,7 +193,6 @@ ActiveRecord::Schema.define(version: 20160625190044) do
   add_foreign_key "user_documents", "documents"
   add_foreign_key "user_documents", "users"
   add_foreign_key "user_informations", "users"
-  add_foreign_key "user_references", "documents"
   add_foreign_key "user_references", "user_documents"
   add_foreign_key "user_references", "users"
 end
