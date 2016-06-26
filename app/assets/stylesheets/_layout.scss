@@ -17,11 +17,13 @@
 }
 	.two-column__sidebar {
 		width: 100%;
+	  background-image: url('gray_texture.png');
 	}	
 	.two-column__body {
 		width: 100%;
-		padding: $base-padding;
+		padding: $base-padding $large-padding;
 	}
+
 
 
 	@media (min-width: 768px) {
