@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="http://115529283863-njj542hgl5hp4kvpmvl33ou016oi7rc1.apps.googleusercontent.com/">
+<title>Home</title>
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,500' rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+ 
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        
+      };
+    </script>
+
+<style type="text/css">
+
+	body {
+    	background-image: url(splash-page-bg.jpg);
+    	background-size:     cover;
+    	background-repeat:   no-repeat;
+	}
+
+	.outer {
+		display: table;
+		position: absolute;;
+		height: 100%;
+		width: 100%;
+	}
+
+	.middle {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.inner {
+		margin-left: auto;
+		margin-right: auto;
+		width: 400px;
+	}
+
+	.heading {
+		color: #fff;
+		/*font-weight: bold;*/
+		font-size: 20px;
+		font-family: 'Roboto', sans-serif;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	.accExist {
+		color: #fff;
+		/*font-weight: bold;*/
+		font-size: 20px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+	}
+
+	.textBoxes {
+		border-color: #fff;
+		border-style: solid;
+		background-color: #11244a;
+		width: 360px;
+		height: 30px;
+		font-size: 20px;
+		font-family: 'Roboto', sans-serif;
+		color: #fff;
+		padding: 10px;
+	}
+
+	#logo {
+		display:block;
+    	margin:auto;
+	}
+
+	::-webkit-input-placeholder {
+   		color: #adadad;
+   		font-family: 'Roboto', sans-serif;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+   		color: #adadad;  
+   		font-family: 'Roboto', sans-serif;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+   		color: #adadad;  
+   		font-family: 'Roboto', sans-serif;
+	}
+
+	:-ms-input-placeholder {  
+   		color: #adadad;  
+   		font-family: 'Roboto', sans-serif;
+	}
+
+	#logIn a {
+		color: #ff6600;
+		text-decoration: none;
+	}
+
+	.g-signin2 {
+		width: 360px;
+		height: 30px;
+	}
+
+</style>
+
+
+
+
+</head>
+<body bgcolor="11244a ">
+
+<div class="outer">
+<div class="middle">	
+	<div class="inner">
+		<img id="logo" src="logo_white.png" alt="logo" width="150">
+		<br>
+		<p class="heading">Sign up here to get your record expunged.</p>
+		<p><input class="textBoxes" type="text" name="email" placeholder="Email"></p>
+		<p><input class="textBoxes" type="text" name="username" placeholder="Username"></p>
+		<p><input class="textBoxes" type="password" name="password" placeholder="Password"></p>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<br>
+		<p class="accExist">Already have an account? <span id="logIn"><a href="signIn.html">Log In</a></span></p>
+	</div>
+</div>
+</div>
+	
+
+
+</body>
+
+</html>

@@ -4,27 +4,42 @@ body {
     font-family:$roboto;
 }
 
-#main-header {
-background-color:$darkblue;
-}
+/* HEADER/NAV */
 
 .navbar-default {
     background-color:$darkblue !important;
     border:none !important;
-    padding:1em 0 !important;
-
-    .logo {
-        padding:0 1em;
-    }
 }
 
-#site-nav {
-    margin-top:10px;
+#main-header .navbar-brand {
+    height:75px;
+}
+
+#main-header .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#main-header .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.navbar-nav {
     li a {
         text-decoration: none;
         color: #fff !important;
         font-weight: bold;
         text-transform:uppercase;
+        width: 100%;
     }
 
     li a:hover {
@@ -32,11 +47,59 @@ background-color:$darkblue;
     }
 }
 
-@media screen and (max-width: 700px) {
-    .logo {
-        max-width:300px;
+@media screen and (min-width: 700px) {
+    .navbar-toggle {
+        margin-top:35px;
     }
 }
+
+@media screen and (max-width: 830px) {
+    .navbar-toggle {
+        margin-top:25px;
+    }
+}
+
+@media (max-width: 1000px) {
+  #main-header .nav >li >a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+/* END HEADER */
 
 input[type=button] {
     width: 150px;
@@ -74,34 +137,4 @@ textarea {
 .doc-container {
   width:73%;
   float: right;
-}
-
-#site-nav {
-   list-style-type: none;
-   display:inline-block;
-    padding-top:-30px;
-    padding-left: 20px;
-
-    ul {
-        padding-left:10px;
-        margin-bottom: 0;
-    }
-
-    ul li {
-        display: inline;
-        margin-right: 15px;
-        font-size: 14px;
-    }
-
-    ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        width: 100%;
-    }
-
-    ul li a:hover {
-        color: #fff;
-        background-color:none !important;
-    }
 }
