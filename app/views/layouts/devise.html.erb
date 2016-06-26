@@ -8,12 +8,12 @@
   </head>
 
 <body class="splash-bg">
-<form action="index.html" method="POST" id="form1">
-<div class="outer">
-<div class="middle">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<div class="outer">
+	<div class="middle">
 	<div class="inner">
     <img id="logo" src="/assets/logo_white.png" alt="logo" width="150">
-
+<% end %>
 <%= yield %>
 
 
