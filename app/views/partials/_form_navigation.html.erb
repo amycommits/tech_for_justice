@@ -1,43 +1,47 @@
-<div class="form-navigation">
+<div class="form-navigation two-column__sidebar">
+	<% if @video_url %>
+		<div class="form-navigation__video">
+			<iframe src="<%= @video_url %>" frameborder="0"></iframe>
+		</div>
+	<% end %>
+
+
 	<ul class="form-navigation__list">
 
-		<li class="form-step form-navigation__list-item">
+		<li class="form-step form-step--active form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_case_infos_path %>">
-				<h2 class="form-step__name">
+				<div class="form-step__number">1</div>
 					Add Case Information
-				</h2>
 			</a>
 		</li>
 		
 		<li class="form-step form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_case_infos_path %>">
-				<h2 class="form-step__name">
+				<div class="form-step__number">2</div>
 					Reasons for Expungement
-				</h2>
 			</a>
 		</li>
 		
 		<li class="form-step form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_case_infos_path %>">
-				<h2 class="form-step__name">
+				<div class="form-step__number">3</div>
+
 					How have you changed?
-				</h2>
 			</a>
 		</li>
 		
 		<li class="form-step form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_case_infos_path %>">
-				<h2 class="form-step__name">
+				<div class="form-step__number">4</div>
+
 					Additional Information
-				</h2>
 			</a>
 		</li>
 
 		<li class="form-step form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_case_infos_path %>">
-				<h2 class="form-step__name">
+				<div class="form-step__number">5</div>
 					Print and Export
-				</h2>
 			</a>
 		</li>
 
