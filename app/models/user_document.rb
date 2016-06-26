@@ -19,3 +19,4 @@ class UserDocument < ActiveRecord::Base
   has_many :user_references
 
 end
+
