@@ -64,6 +64,9 @@ group :development do
   gem 'guard'
   # specifically, styleguide automation
   gem 'guard-hologram'
+  
+  gem 'tooltipster-rails'
+  
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views
