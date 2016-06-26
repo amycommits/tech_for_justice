@@ -1,7 +1,8 @@
 class UserDocumentsController < ApplicationController
   before_action :set_user_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  layout "form_layout", except: :index
+  
   # GET /user_documents
   # GET /user_documents.json
   def index
