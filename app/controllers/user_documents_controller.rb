@@ -2,7 +2,7 @@ class UserDocumentsController < ApplicationController
   before_action :set_user_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   layout "form_layout", except: :index
-  
+
   # GET /user_documents
   # GET /user_documents.json
   def index
@@ -13,12 +13,14 @@ class UserDocumentsController < ApplicationController
   # GET /user_documents/1.json
   def show
     #Prawn for PDF
+    @document = UserDocument.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World"
-        send_data pdf.render
+        pdf = DocumentFinalPdf.new(@document)
+        send_data pdf.render, filename: "user_document.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
       end
     end
   end

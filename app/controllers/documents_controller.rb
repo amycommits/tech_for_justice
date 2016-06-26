@@ -35,7 +35,7 @@ class DocumentsController < ApplicationController
       format.html
       format.pdf do
         pdf = Prawn::Document.new
-        pdf.text "hello world"
+        pdf.text "hello there!"
         send_data pdf.render, :filename => "document_#{@document.name}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
@@ -46,7 +46,7 @@ class DocumentsController < ApplicationController
       format.html
       format.pdf do
         pdf = Prawn::Document.new
-        pdf.text "hello world"
+        pdf.text "switcharoo"
         send_data pdf.render, :filename => "document.pdf",
                               type: "application/pdf",
                               disposition: "inline"
