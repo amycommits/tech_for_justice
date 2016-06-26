@@ -9,6 +9,7 @@ body {
 .navbar-default {
     background-color:$darkblue !important;
     border:none !important;
+    margin-bottom:0 !important;
 }
 
 #main-header .navbar-brand {
