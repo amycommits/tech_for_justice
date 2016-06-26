@@ -1,4 +1,4 @@
-<%= form_for(@user_reference) do |f| %>
+<%= form_for(@user_reference, remote: true) do |f| %>
   <% if @user_reference.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_reference.errors.count, "error") %> prohibited this user_reference from being saved:</h2>
@@ -10,11 +10,11 @@
       </ul>
     </div>
   <% end %>
- <div class="field">
+ <div class="field" hidden>
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
-  <div class="field">
+  <div class="field" hidden>
     <%= f.label :user_document_id %><br>
     <%= f.text_field :user_document_id, value: params[:user_document_id] %>
   </div>

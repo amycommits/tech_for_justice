@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Docket</th>
       <th>Charged with</th>
       <th>Charge type</th>
@@ -20,7 +19,6 @@
   <tbody>
     <% @user_case_infos.each do |user_case_info| %>
       <tr>
-        <td><%= user_case_info.user %></td>
         <td><%= user_case_info.docket_id %></td>
         <td><%= user_case_info.charged_with %></td>
         <td><%= user_case_info.charge_type %></td>
@@ -37,7 +35,11 @@
 </table>
 
 <br>
-
-<%= link_to 'New User case info', new_document_user_case_info_path(params[:user_document_id]) %>
+<h1>New User case info </h1>
+<%= render partial: 'form' %>
+<p/>
+<%= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %>
 <br/>
+<% if !params[:user_document_id].nil?%>
 <%= link_to 'User Argument(s)', user_document_user_arguments_path(params[:user_document_id]) %>
+<% end %>
