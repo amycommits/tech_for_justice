@@ -11,3 +11,4 @@ class Users::OmniauthCallbacksController < Application::Base
       params[:error] = :account_not_found
       do_failure_things
 end
+end
