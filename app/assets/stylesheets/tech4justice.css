@@ -4,6 +4,8 @@ body {
     font-family:$roboto;
 }
 
+/* HEADER/NAV */
+
 .navbar-default {
     background-color:$darkblue !important;
     border:none !important;
@@ -57,44 +59,6 @@ body {
     }
 }
 
-input[type=button] {
-    width: 150px;
-    height: 30px;
-    background-color: #1b2845;
-    color: #ff6600;
-    font-weight: bold;
-    padding: 5px 5px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-textarea {
-    width: 350px;
-    height: 150px;
-    padding: 5px 5px;
-    border: none;
-    border-radius: 4px;
-    resize: none;
-}
-.instructional {
-  width:25%;
-  border-right: solid;
-  border-right-color: #848fa5;
-  float: left;
-}
-
-.highlighted-text {
-    color: #ff6600;
-    font-weight: bold;
-}
-
-.doc-container {
-  width:73%;
-  float: right;
-}
-
 @media (max-width: 1000px) {
   #main-header .nav >li >a {
     padding-top: 10px !important;
@@ -134,4 +98,43 @@ textarea {
   .collapse.in{
       display:block !important;
   }
+}
+/* END HEADER */
+
+input[type=button] {
+    width: 150px;
+    height: 30px;
+    background-color: #1b2845;
+    color: #ff6600;
+    font-weight: bold;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 350px;
+    height: 150px;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+}
+.instructional {
+  width:25%;
+  border-right: solid;
+  border-right-color: #848fa5;
+  float: left;
+}
+
+.highlighted-text {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.doc-container {
+  width:73%;
+  float: right;
 }
