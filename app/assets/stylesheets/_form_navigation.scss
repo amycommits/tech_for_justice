@@ -1,12 +1,19 @@
-.form-wrap {
-	@include flex(1);
-	@extend %flexbox;
-	@include flex-wrap(wrap);
-}
 .form-navigation {
 	background-color: $lightgray;
-	width: 100%;
 }
+
+	// responsive video
+	.form-navigation__video {
+		position: relative;
+		margin: $base-padding;
+		padding-bottom: 50%;
+		iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	.form-navigation__list, .form-navigation__list-item {
 		list-style: none;
 		margin: 0;
@@ -14,31 +21,61 @@
 	}
 
 .form-step {
-	padding: $base-padding;
-	border-bottom: 1px solid #fff;
+	font-weight: 300;
 }
-	.form-step__name {
-		font-size: 1.4em;
-		margin: 0;
-	}
 	.form-step__link {
-		color: inherit;
+		padding: 5px $base-padding;
+
+		color: #555;
+		display: block;
+		font-size: 1.4em;
+
 		&:hover {
 			text-decoration: none;
-			color: $lightblue;
+			.form-step__number {
+				background-color: $mediumblue;
+			}
+		}
+
+		.form-step--active &:hover {
+			color: inherit;
+			.form-step__number {
+				background-color: $darkblue;
+			}
+		}
+		.form-step--active & {
+			color: $darkblue;			
 		}
 	}
 
-.form-body {
-	width: 100%;
-	padding: $base-padding;
+	$number-size-ratio: 1.4;
+	$number-font-size: (1 / $number-size-ratio) * 1em;
+
+	.form-step__number {
+		float: left;
+
+		transition: 0.1s;
+
+
+		font-size: $number-font-size;
+		line-height: $number-size-ratio * 1.42857143em;
+
+		height: $number-size-ratio * 1.42857143em;
+		width: $number-size-ratio * 1.42857143em;
+
+		background-color: $darkgray;
+		margin-right: 0.8em;
+		color: #fff;
+		border-radius: 100%;
+		text-align: center;
+
+		.form-step--active & {
+			background-color: $darkblue;
+		}
+	}
+
+
+.form-step--active {
+	font-weight: 500;
 }
 
-@media (min-width: 768px) {
-	.form-navigation {
-		@include flex(0, 0, 300px);
-	}
-	.form-body {
-		@include flex(1);
-	}
-}

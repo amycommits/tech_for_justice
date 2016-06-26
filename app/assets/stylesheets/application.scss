@@ -13,6 +13,9 @@ body {
 // styles related to the page layout
 @import "layout";
 
+// sidebar styles!
+@import "sidebar";
+
 
 @import "buttons";
 
@@ -20,3 +23,4 @@ body {
 // Styles related to the form progress sidebar
 @import "form_navigation";
 
+@import "form";
