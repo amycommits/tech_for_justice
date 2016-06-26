@@ -1,5 +1,5 @@
 .form-navigation {
-	background-color: $lightgray;
+	background-color: $lightgray;	
 }
 
 	// responsive video
@@ -16,13 +16,23 @@
 
 	.form-navigation__list, .form-navigation__list-item {
 		list-style: none;
-		margin: 0;
 		padding: 0;
+	}
+
+	.form-navigation__list {
+		margin: $base-padding 0 0;
+	}
+	.form-navigation__list-item {
+		margin: 0 0 $base-padding;
 	}
 
 .form-step {
 	font-weight: 300;
+
+	display: block;
+	position: relative;
 }
+
 	.form-step__link {
 		padding: 5px $base-padding;
 
@@ -54,9 +64,6 @@
 	.form-step__number {
 		float: left;
 
-		transition: 0.1s;
-
-
 		font-size: $number-font-size;
 		line-height: $number-size-ratio * 1.42857143em;
 
@@ -77,5 +84,23 @@
 
 .form-step--active {
 	font-weight: 500;
+
+	&:after {
+		display: block;
+		position: absolute;
+		content: "";
+		height: 100%;
+
+		width: $base-padding;
+		left: 100%;
+		top: 0;
+
+		border-width: 18px 0 18px $base-padding;
+		border-style: solid;
+		border-color: #fff transparent;
+
+	  background-image: url('gray_texture.png');
+
+	}
 }
 
