@@ -7,6 +7,13 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = Document.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Writer.new
+        send_data pdf.render, :filename => 'document.pdf', :type => "application/pdf", :disposition => 'inline'
+      end
+    end
     #@existing_user_info = UserInformation.where(user_id: current_user.id)
    # @existing_argument = UserArgument.where(user_id: current_user.id, document_id: 1) || nil
 
@@ -21,17 +28,27 @@ class DocumentsController < ApplicationController
   # GET /documents/1.json
   def show
     #Prawn for PDF
-    @document = Document.find(params[:id])
     respond_to do |format|
       format.html
-      format.json
       format.pdf do
         pdf = Prawn::Document.new
-        pdf.text "Hello World"
-        send_data pdf.render
+        pdf.text "hello world"
+        send_data pdf.render, :filename => "document_#{@document.name}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
   end
+
+  def expungement_form
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "hello world"
+        send_data pdf.render, :filename => "document.pdf", type: "application/pdf", disposition: "inline"
+      end
+    end
+  end
+
 
 
   # GET /documents/new
