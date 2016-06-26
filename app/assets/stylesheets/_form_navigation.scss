@@ -1,11 +1,30 @@
-.form-wrap {
+.two-column {
 	@include flex(1);
 	@extend %flexbox;
 	@include flex-wrap(wrap);
 }
+	.two-column__sidebar {
+		width: 100%;
+	}	
+	.two-column__body {
+		width: 100%;
+		padding: $base-padding;
+	}
+
+
+	@media (min-width: 768px) {
+		.two-column__sidebar {
+			@include flex(0, 0, 300px);
+		}
+		.two-column__body {
+			@include flex(1);
+		}
+	}
+
+
+
 .form-navigation {
 	background-color: $lightgray;
-	width: 100%;
 }
 	.form-navigation__list, .form-navigation__list-item {
 		list-style: none;
@@ -29,16 +48,3 @@
 		}
 	}
 
-.form-body {
-	width: 100%;
-	padding: $base-padding;
-}
-
-@media (min-width: 768px) {
-	.form-navigation {
-		@include flex(0, 0, 300px);
-	}
-	.form-body {
-		@include flex(1);
-	}
-}
