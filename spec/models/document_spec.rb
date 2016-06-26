@@ -8,7 +8,7 @@ RSpec.describe Document, type: :model do
       expect(document).to validate_presence_of :name
     end
 
-    it 'should accept string name' do
+    it 'should have document name field to return text' do
       expect(document.name).to eq('MyString')
     end
   end
