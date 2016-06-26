@@ -43,11 +43,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  get 'about', to: 'static_contents#about'
-  get 'contact', to: 'static_contents#contact'
+  get 'about', to: 'application#about'
+  get 'contact', to: 'application#contact'
 
   get 'mock/personal_info', to: 'prototypes#personal_info'
   get 'mock/homepage', to: 'prototypes#homepage'
   get 'mock/documents', to: 'prototypes#documents'
 
-end
+end 
