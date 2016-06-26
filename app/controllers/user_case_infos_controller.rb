@@ -6,6 +6,7 @@ class UserCaseInfosController < ApplicationController
   # GET /user_case_infos.json
   def index
     @user_case_infos = UserCaseInfo.all
+    @user_case_info = UserCaseInfo.new
   end
 
   # GET /user_case_infos/1

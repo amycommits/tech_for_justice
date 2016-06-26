@@ -6,6 +6,7 @@ class UserArgumentsController < ApplicationController
   # GET /user_arguments.json
   def index
     @user_arguments = UserArgument.all
+    @user_argument = UserArgument.new
   end
 
   # GET /user_arguments/1
