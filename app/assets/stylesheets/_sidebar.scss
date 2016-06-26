@@ -1,0 +1,32 @@
+
+.sidebar {
+  background-image: url('gray_texture.png');
+  width: 250px;
+  height: 100%;
+  float: left;
+  position: fixed;
+}
+
+.blue_banner{
+  background-color: $darkblue;
+  height: 50px;
+  margin-top: 30px;
+  color: white;
+  line-height: 50px;
+  font-size: 22px;
+  text-align: center;
+  color: #a6a6a6;
+  margin-right: -10px;
+  padding-right: 10px;
+}
+
+.right-column{
+  float: right;
+  clear: left;
+}
+
+.sidebar-docs-title {
+  text-align: center;
+  color: $darkblue;
+  font-size: 22px;
+}
