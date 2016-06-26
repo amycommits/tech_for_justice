@@ -9,7 +9,7 @@ RSpec.describe Document, type: :model do
     end
 
     it 'should accept string name' do
-      expect(document).to validate_presence_of :name
+      expect(document.name).to eq('MyString')
     end
   end
 end
