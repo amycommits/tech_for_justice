@@ -30,6 +30,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use Unicorn as the app server
 gem 'unicorn-rails', platforms: :ruby
 
+gem 'tooltipster-rails'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -65,7 +66,6 @@ group :development do
   # specifically, styleguide automation
   gem 'guard-hologram'
   
-  gem 'tooltipster-rails'
   
 
 
