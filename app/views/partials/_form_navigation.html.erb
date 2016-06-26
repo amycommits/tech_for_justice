@@ -7,38 +7,62 @@
 
 
 	<ul class="form-navigation__list">
+	<% if current_page?(new_user_information_path) 
+		@active = "form-step--active"
+	else
+		@active = ""
+	end %>
 
-		<li class="form-step form-navigation__list-item">
+		<li class="form-step <%= @active %> form-navigation__list-item ">
 			<a class="form-step__link" href="<%= new_user_information_path %>">
 				<div class="form-step__number">1</div>
 					About You
 			</a>
 		</li>
 
+<% if current_page?(new_user_case_info_path) 
+		@active = "form-step--active"
+	else
+		@active = ""
+	end %>
 
-		<li class="form-step form-navigation__list-item">
+		<li class="form-step <%= @active %> form-navigation__list-item">
 			<a class="form-step__link" href="<%= new_user_case_info_path %>">
 				<div class="form-step__number">2</div>
 					Add Case Information
 			</a>
 		</li>
 		
-		<li class="form-step form-navigation__list-item">
+		<% if current_page?(user_arguments_path) 
+		@active = "form-step--active"
+	else
+		@active = ""
+	end %>
+
+		<li class="form-step <%= @active %> form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_arguments_path %>">
 				<div class="form-step__number">3</div>
 					Reasons for Expungement
 			</a>
 		</li>
 		
-		
-		<li class="form-step form-navigation__list-item">
+		<% if current_page?(user_references_path) 
+		@active = "form-step--active"
+	else
+		@active = ""
+	end %>
+
+		<li class="form-step <%= @active %> form-navigation__list-item">
 			<a class="form-step__link" href="<%= user_references_path %>">
 				<div class="form-step__number">4</div>
 					Your References
 			</a>
 		</li>
 
-		<li class="form-step form-navigation__list-item">
+		<% @active = "" %>
+
+
+		<li class="form-step <%= @active %> form-navigation__list-item">
 			<a class="form-step__link" href="<%= documents_path %>">
 				<div class="form-step__number">5</div>
 					Print and Export
