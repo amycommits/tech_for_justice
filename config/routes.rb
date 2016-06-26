@@ -32,26 +32,19 @@ Rails.application.routes.draw do
     resources :user_references
     resources :review
   end
-<<<<<<< HEAD
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   get 'about', to: 'application#about'
   get 'contact', to: 'application#contact'
-=======
->>>>>>> 32f8fc94857881ddd34580371b333d85342ae164
 
-  get 'about', to: 'static_content#about', as: :about
-  get 'contact', to: 'static_content#contact', as: :contact
   get 'mock/personal_info', to: 'prototypes#personal_info'
   get 'mock/homepage', to: 'prototypes#homepage'
   get 'mock/documents', to: 'prototypes#documents'
 
-<<<<<<< HEAD
-end 
-=======
+
   #For pdf testing
   get 'documents', to: 'documents#index'
 
 end
->>>>>>> 32f8fc94857881ddd34580371b333d85342ae164
