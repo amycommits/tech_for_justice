@@ -51,11 +51,7 @@ body {
     }
 }
 
-@media screen and (max-width: 700px) {
-    #main-header .nav >li >a {
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
+@media screen and (max-width: 830px) {
     .navbar-toggle {
         margin-top:25px;
     }
@@ -97,4 +93,45 @@ textarea {
 .doc-container {
   width:73%;
   float: right;
+}
+
+@media (max-width: 1000px) {
+  #main-header .nav >li >a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
 }
