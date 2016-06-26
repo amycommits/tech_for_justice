@@ -1,13 +1,21 @@
-﻿#main-header .site-title {
+﻿@import "variables";
+
+body {
+    font-family:$roboto;
+}
+
+#main-header .site-title {
 background-color: #1b2845;
-height:125px;
 color: #f2f5ff;
 font-size: 24px;
 font-weight: bold;
-padding-top: 30px;
+padding-top: 10px;
+padding-bottom:10px;
 padding-left: 30px;
     .logo {
         color:#fff;
+        height:130px;
+        width:143px;
     }
 }
 
@@ -70,11 +78,9 @@ textarea {
 
 #site-nav {
    list-style-type: none;
-    background-color: #5899e2;
-    min-height: 50px;
-    padding-top:13px;
+   display:inline-block;
+    padding-top:-30px;
     padding-left: 20px;
-    margin-top: -1px;
 
     ul {
         padding-left:10px !important;
@@ -88,7 +94,7 @@ textarea {
 
     ul li a {
         text-decoration: none;
-        color: #1b2845;
+        color: #fff;
         font-weight: bold;
         width: 100%;
     }
