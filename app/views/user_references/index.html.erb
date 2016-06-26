@@ -7,6 +7,8 @@
     <tr>
       <th>Document</th>
       <th>Attachment</th>
+      <th>Reference Name</th>
+      <th>Relation to Self</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= user_reference.user_document_id %></td>
         <td><%= user_reference.attachment %></td>
+        <td><%= user_reference.reference_name %></td>
+        <td><%= user_reference.relation_to_user %></td>
         <td><%= link_to 'Show', user_reference %></td>
         <td><%= link_to 'Edit', edit_user_reference_path(user_reference) %></td>
         <td><%= link_to 'Destroy', user_reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>

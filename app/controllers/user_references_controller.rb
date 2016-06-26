@@ -72,6 +72,6 @@ class UserReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_reference_params
-      params.require(:user_reference).permit(:document, :attachment)
+      params.require(:user_reference).permit(:document, :attachment, :reference_name, :relation_to_user, :recommendation)
     end
 end
