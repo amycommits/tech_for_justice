@@ -1,7 +1,8 @@
 class UserArgumentsController < ApplicationController
   before_action :set_user_argument, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  layout "form_layout", except: :index
+
+  layout "form_layout"
 
   # GET /user_arguments
   # GET /user_arguments.json
