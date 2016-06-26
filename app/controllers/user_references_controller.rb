@@ -6,6 +6,7 @@ class UserReferencesController < ApplicationController
   # GET /user_references.json
   def index
     @user_references = UserReference.all
+     @user_reference = UserReference.new
   end
 
   # GET /user_references/1
