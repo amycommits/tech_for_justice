@@ -39,7 +39,7 @@ class UserDocumentsController < ApplicationController
     @user_document = current_user.user_documents.build(user_document_params)
     @user_info = current_user.user_information
 
-   if @user_document.save
+    if @user_document.save
       if !@user_info.nil?
         redirect_to edit_user_document_user_information_path(@user_document.id, @user_info)
       else
