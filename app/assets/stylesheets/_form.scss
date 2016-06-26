@@ -39,8 +39,14 @@ font-size: 18px;
 padding: 10px 20px;
 border-bottom: 2px solid $darkorange;
 appearance: none;
+margin: 20px 0;
 
 &:hover {
   background-color: $mediumorange;
 }
+}
+
+.form_container{
+  max-width: 700px;
+  margin: 0 auto;
 }
