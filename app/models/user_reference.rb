@@ -3,8 +3,10 @@
 # Table name: user_references
 #
 #  id               :integer          not null, primary key
-#  document_id      :integer
 #  attachment       :text
+#  reference_name   :string
+#  relation_to_user :string
+#  reference        :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  user_id          :integer
