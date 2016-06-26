@@ -59,6 +59,13 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
 
+
+  # for automation
+  gem 'guard'
+  # specifically, styleguide automation
+  gem 'guard-hologram'
+
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end
