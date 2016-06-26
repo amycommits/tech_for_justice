@@ -14,11 +14,11 @@
 
   <div class="field">
     <%= f.label :docket_id %><br>
-    <%= f.text_area :docket_id %>
+    <%= f.text_field :docket_id %>
   </div>
   <div class="field">
     <%= f.label :charged_with %><br>
-    <%= f.text_area :charged_with %>
+    <%= f.text_field :charged_with %>
   </div>
   <div class="field">
     <%= f.label :charge_type %><br>
@@ -34,13 +34,13 @@
   </div>
   <div class="field">
     <%= f.label :is_case_pending %><br>
-    <%= f.text_area :is_case_pending %>
+    <%= f.text_field :is_case_pending %>
   </div>
   <div class="field">
     <%= f.label :case_end_date %><br>
     <%= f.datetime_select :case_end_date %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit_button'%>
   </div>
 <% end %>

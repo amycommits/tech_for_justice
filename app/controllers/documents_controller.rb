@@ -1,7 +1,10 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "form_layout", except: :index
+
   respond_to :html, :json
+  layout "form_layout", except: :index
 
   # GET /documents
   # GET /documents.json
@@ -32,7 +35,7 @@ class DocumentsController < ApplicationController
       format.html
       format.pdf do
         pdf = Prawn::Document.new
-        pdf.text "hello world"
+        pdf.text "hello there!"
         send_data pdf.render, :filename => "document_#{@document.name}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
@@ -43,7 +46,7 @@ class DocumentsController < ApplicationController
       format.html
       format.pdf do
         pdf = Prawn::Document.new
-        pdf.text "hello world"
+        pdf.text "switcharoo"
         send_data pdf.render, :filename => "document.pdf",
                               type: "application/pdf",
                               disposition: "inline"

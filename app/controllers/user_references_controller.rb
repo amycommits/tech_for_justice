@@ -1,6 +1,7 @@
 class UserReferencesController < ApplicationController
   before_action :set_user_reference, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "form_layout"
 
   # GET /user_references
   # GET /user_references.json
@@ -71,6 +72,6 @@ class UserReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_reference_params
-      params.require(:user_reference).permit(:document, :attachment)
+      params.require(:user_reference).permit(:document, :attachment, :reference_name, :relation_to_user, :recommendation)
     end
 end

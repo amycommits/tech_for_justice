@@ -26,5 +26,4 @@ class User < ActiveRecord::Base
   has_many :user_case_infos
   has_one :user_information
   has_many :user_documents
-  has_and_belongs_to_many :oauth_credentials
 end

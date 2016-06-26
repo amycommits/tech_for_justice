@@ -31,8 +31,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn-rails', platforms: :ruby
 
 group :development, :test do
-  gem 'annotate'
-  gem 'capybara'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'factory_girl_rails'
   gem 'rails-erd'
   gem 'rspec-rails','~> 3.0'
 end
@@ -42,17 +45,26 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'factory_girl_rails'
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'headless'
+  gem 'poltergeist'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do
+  gem 'annotate'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
+
+
+  # for automation
+  gem 'guard'
+  # specifically, styleguide automation
+  gem 'guard-hologram'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

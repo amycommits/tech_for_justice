@@ -2,22 +2,37 @@
 <html>
   <head>
     <title>a brand new styleguide: <%= title %></title>
-    <link rel="stylesheet" href="./your_stylesheet_here.css">
+    <link rel="stylesheet" href="../assets/application.css">
   </head>
   <body>
-    <div>
-      <nav>
-        <ul>
-        <% @categories.each do |category, file_name| %>
-          <li><a href="<%= file_name %>"><%= category %></a></li>
-        <% end %>
-        </ul>
-      </nav>
+    <div class="wrap">
 
-      <h1>a brand new style guide, it's super effective</h1>
-      <section class="content">
-        <ul>
-        <% @blocks.each do |b| %>
-          <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-        <% end %>
-        </ul>
+      <header id="main-header">
+        <div class="site-title">
+          <h1>Style Guide</h1>
+        </div>
+        <nav id="site-nav">
+          <ul>
+          <% @categories.each do |category, file_name| %>
+            <li><a href="<%= file_name %>"><%= category %></a></li>
+          <% end %>
+          </ul>
+        </nav>
+      </header>
+
+
+      <div class="form-wrap">
+
+
+        <div class="form-navigation">
+          <ul class="form-navigation__list">
+          <% @blocks.each do |b| %>
+            <li class="form-navigation__list-item form-step"><a class="form-step__link" href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+          <% end %>
+          </ul>
+        </div>
+
+
+        <section class="form-body">
+
+

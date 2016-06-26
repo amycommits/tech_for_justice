@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 /erd.pdf
+
+# Ignore anything that hologram builds
+/public/docs/*
