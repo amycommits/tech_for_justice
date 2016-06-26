@@ -19,6 +19,7 @@ body {
 #main-header .nav >li >a {
   padding-top: 30px;
   padding-bottom: 30px;
+  font-weight: 300;
 }
 #main-header .navbar-toggle {
   padding: 10px;
