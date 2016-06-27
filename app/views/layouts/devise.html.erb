@@ -6,21 +6,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
-<body class="splash-bg">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	<div class="outer">
-	<div class="middle">
-	<div class="inner">
-    <img id="logo" src="<%= image_path('logo_white.png') %>" alt="logo" width="150">
-<% end %>
-<%= yield %>
-
-
-
-	</div>
-</div>
-</div>
-</form>
-
-</body>
+  <body class="splash-bg">
+    <div id="form1">
+      <div class="outer">
+        <div class="middle">
+          <div class="inner">
+            <img id="logo" src="<%= image_path('logo_white.png') %>" alt="logo" width="150">
+		        <%= yield %>
+	        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
