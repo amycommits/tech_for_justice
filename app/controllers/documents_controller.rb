@@ -13,7 +13,9 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = DocumentListPdf.new
+        @user_info = UserInformation.first
+        @case_info = UserCaseInfo.all
+        pdf = DocumentListPdf.new(@user_info,@case_info)
         send_data pdf.render, :filename => 'document.pdf', :type => "application/pdf", :disposition => 'inline'
       end
     end
@@ -45,7 +47,8 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = Prawn::Document.new
+        @user_info = current_user.user_information
+        pdf = Prawn::Document.new(@user_info)
         pdf.text "hello world"
         send_data pdf.render, :filename => "document.pdf",
                               type: "application/pdf",
