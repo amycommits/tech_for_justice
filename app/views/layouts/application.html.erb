@@ -2,23 +2,19 @@
 <html>
   <head>
     <title>Clean Slate DC</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <div class="wrap">
-
       <%= render 'layouts/header' %>
-
       <div class="two-column">
         <%= render 'layouts/sidebar' %>
         <div class="two-column__body">
           <%= yield %>
         </div>
-        
       </div>
-
     </div>
   </body>
 </html>

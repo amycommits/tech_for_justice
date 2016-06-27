@@ -7,7 +7,7 @@ describe 'About page' do
 
   context 'signed in' do
     it 'displays' do
-      expect(page).to have_css 'h2', 'About'
+      expect(page).to have_css 'h2', text: 'About'
     end
   end
 

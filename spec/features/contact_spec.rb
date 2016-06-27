@@ -7,7 +7,7 @@ describe 'Contact page' do
 
   context 'signed in' do
     it 'displays' do
-      expect(page).to have_css 'h2', 'Contact'
+      expect(page).to have_css 'h2', text: 'Contact'
     end
   end
 
