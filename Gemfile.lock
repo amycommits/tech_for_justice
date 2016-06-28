@@ -43,6 +43,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.6.2)
       execjs
+    awesome_print (1.7.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -62,6 +63,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.13)
+      capybara (>= 1.0, < 3)
+      launchy
     choice (0.2.0)
     cliver (0.3.2)
     coderay (1.1.1)
@@ -123,6 +127,8 @@ GEM
     json (1.8.3)
     jwt (1.5.4)
     kgio (2.10.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -187,6 +193,18 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-awesome_print (9.6.10)
+      awesome_print (>= 1.1.0, < 999)
+      pry (>= 0.9.0, < 999)
+    pry-highlight (0.1.0)
+      coderay
+      json
+      nokogiri
+      pry
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -318,6 +336,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara
+  capybara-screenshot
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
@@ -333,6 +352,10 @@ DEPENDENCIES
   pg (~> 0.15)
   poltergeist
   prawn-rails
+  pry-awesome_print
+  pry-highlight
+  pry-rails
+  quiet_assets
   rails (= 4.2.5.1)
   rails-erd
   rails_12factor
