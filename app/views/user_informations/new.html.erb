@@ -1,13 +1,10 @@
 <% video_url = "https://www.youtube.com/embed/H2coJKNHe3s?list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" %>
 
 <h1>New User Information</h1>
-<h2><%= @user_case_info %></h2>
-<h2><%= params[:user_document_id] %> </h2>
-<h3> more </h3>
-<h2><%= @user_doc %> </h2>
+
 
 <%= render 'form' %>
 
 <!--< %= link_to 'Back', user_informations_path %>-->
-<%= link_to 'User Case Info',user_document_user_case_infos_path(params[:user_document_id]) %>
+<%= link_to 'User Case Info',user_case_infos_path %>
 

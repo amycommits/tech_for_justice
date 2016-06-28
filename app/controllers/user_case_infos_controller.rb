@@ -1,20 +1,26 @@
 class UserCaseInfosController < ApplicationController
-  before_action  only: [:show, :edit, :update, :destroy]
+
+  before_action :set_user_case_info, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "form_layout"
+
 
   # GET /user_case_infos
   # GET /user_case_infos.json
   def index
     @user_case_infos = UserCaseInfo.all
+    @user_case_info = UserCaseInfo.new
   end
 
   # GET /user_case_infos/1
   # GET /user_case_infos/1.json
   def show
+
   end
 
   # GET /user_case_infos/new
   def new
+    @user_case_infos = UserCaseInfo.all
     @user_case_info = UserCaseInfo.new
     #@user_case_info = UserDocument.user_case_info.new
   end

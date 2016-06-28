@@ -1,5 +1,51 @@
-<h1>New User Case Info</h1>
+<p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
+<h1>User Case Information</h1>
+<% if @user_case_infos.count > 0 %>
+  <h2>Current Cases</h2>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Docket</th>
+        <th>Charged with</th>
+        <th>Charge type</th>
+        <th>Police description</th>
+        <th>Case conclusion</th>
+        <th>Is case pending</th>
+        <th>Case end date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<%= link_to 'Back', user_case_infos_path %>
+    <tbody>
+      <% @user_case_infos.each do |user_case_info| %>
+        <tr>
+          <td><%= user_case_info.docket_id %></td>
+          <td><%= user_case_info.charged_with %></td>
+          <td><%= user_case_info.charge_type %></td>
+          <td><%= user_case_info.police_description %></td>
+          <td><%= user_case_info.case_conclusion %></td>
+          <td><%= user_case_info.is_case_pending %></td>
+          <td><%= user_case_info.case_end_date %></td>
+          <td><%= link_to 'Show', user_case_info %></td>
+          <td><%= link_to 'Edit', edit_user_case_info_path(user_case_info) %></td>
+          <td><%= link_to 'Destroy', user_case_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br />
+
+<% end %>
+<h2>Add a New Case</h2>
+<%= render partial: 'form' %>
+<p/>
+<%= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %>
+<br/>
+<% if !params[:user_document_id].nil?%>
+<%= link_to 'User Argument(s)', user_document_user_arguments_path(params[:user_document_id]) %>
+<% end %>
+
+<%= link_to 'New User case info', new_user_case_info_path %>
+<br/>

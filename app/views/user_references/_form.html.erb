@@ -1,4 +1,10 @@
-<%= form_for(@user_reference) do |f| %>
+<script>
+        $(document).ready(function() {
+            $('.tooltips').tooltipster({trigger: 'click', position: 'right'});
+        });
+</script>
+
+<%= form_for(@user_reference, remote: true) do |f| %>
   <% if @user_reference.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_reference.errors.count, "error") %> prohibited this user_reference from being saved:</h2>
@@ -10,19 +16,32 @@
       </ul>
     </div>
   <% end %>
- <div class="field">
+ <div class="field" hidden>
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
-  <div class="field">
+  <div class="field" hidden>
     <%= f.label :user_document_id %><br>
     <%= f.text_field :user_document_id, value: params[:user_document_id] %>
   </div>
   <div class="field">
-    <%= f.label :attachment %><br>
-    <%= f.text_area :attachment %>
+    <%= f.label :attachment %>
+    <%= f.text_field :attachment, :title => 'Upload Your Attachent', :class => 'tooltips'   %>
+  </div>
+  <div class="field">
+    <%= f.label :reference_name %>
+    <%= f.text_field :reference_name, :title => 'Enter Your References Name', :class => 'tooltips'   %>
+  </div>
+  <div class="field">
+    <%= f.label :relation_to_user %>
+    <%= f.text_field :relation_to_user, :title => 'Enter Your Relationship to the Reference', :class => 'tooltips'   %>
+  </div>
+  <div class="field">
+    <%= f.label :recommendation %><br />
+    <%= f.text_area :recommendation, :title => 'Enter the Recommendation', :class => 'tooltips'   %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'submit_button'%>
   </div>
+
 <% end %>

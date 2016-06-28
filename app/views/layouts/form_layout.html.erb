@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tech for Justice</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+	<div class="wrap">
+
+		<%= render 'layouts/header' %>
+
+		<div class="two-column">
+			<%= render "partials/form_navigation" %>
+			<div class="two-column__body form_styling">
+        <div class="form_container">
+				<%= yield %>
+      </div>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>

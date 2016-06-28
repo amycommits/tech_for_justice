@@ -1,4 +1,31 @@
+@import "variables";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "scaffolds";
 @import "tech4justice";
+
+body {
+	font-family: $roboto;
+}
+
+@import "mixins";
+
+// styles related to the page layout
+@import "layout";
+
+// sidebar styles!
+@import "sidebar";
+
+
+@import "buttons";
+
+
+// Styles related to the form progress sidebar
+@import "form_navigation";
+
+@import "form";
+
+@import "tooltipster";
+//@import "tooltipster-themes/tooltipster-light"
+
+@import "splash";

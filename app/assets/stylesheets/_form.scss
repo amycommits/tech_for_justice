@@ -1,0 +1,52 @@
+.form_page_title{
+  color: $darkblue;
+  margin-bottom: 30px;
+}
+
+.form_title {
+  color: $darkblue;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.form_styling {
+input[type="text"],
+textarea{
+  width:100%;
+  font-size: 17px;
+  display:block;
+  margin-bottom: 30px;
+  padding: 8px;
+  border: 1px solid gray;
+  -webkit-border-radius: 0px;
+ -moz-border-radius: 0px;
+ border-radius: 0px;
+ color: gray;
+ }
+}
+
+label {
+  font-size: 20px;
+  color: $darkblue;
+  font-weight: 400;
+}
+
+.submit_button {
+background-color: $orange;
+border: none;
+color: white;
+font-size: 18px;
+padding: 10px 20px;
+border-bottom: 2px solid $darkorange;
+appearance: none;
+margin: 20px 0;
+
+&:hover {
+  background-color: $mediumorange;
+}
+}
+
+.form_container{
+  max-width: 700px;
+  margin: 0 auto;
+}

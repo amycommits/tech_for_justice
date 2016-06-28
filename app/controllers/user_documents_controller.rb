@@ -1,7 +1,8 @@
 class UserDocumentsController < ApplicationController
   before_action :set_user_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  layout "form_layout", except: :index
+  
   # GET /user_documents
   # GET /user_documents.json
   def index
@@ -11,11 +12,20 @@ class UserDocumentsController < ApplicationController
   # GET /user_documents/1
   # GET /user_documents/1.json
   def show
+    #Prawn for PDF
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "Hello World"
+        send_data pdf.render
+      end
+    end
   end
 
   # GET /user_documents/new
   def new
-      @user_document = current_user.user_documents.build 
+      @user_document = current_user.user_documents.build
       @user_info_id = current_user.user_information
   end
 
@@ -31,7 +41,7 @@ class UserDocumentsController < ApplicationController
     @user_info = current_user.user_information
 
    if @user_document.save
-      if !@user_info.nil? 
+      if !@user_info.nil?
         redirect_to edit_user_document_user_information_path(@user_document.id, @user_info)
       else
         redirect_to new_user_document_user_information_path(@user_document.id)
@@ -46,17 +56,17 @@ class UserDocumentsController < ApplicationController
   # PATCH/PUT /user_documents/1.json
   def update
     @user_information_info = UserInformation.where(user_id: current_user.id)
-   
-   
+
+
       @user_info = current_user.user_information
        if @user_document.save
-        if !@user_info.nil? 
+        if !@user_info.nil?
           redirect_to edit_user_document_user_information_path(@user_document.id, @user_info)
         else
           redirect_to new_user_document_user_information_path(@user_document.id)
         end
       end
-    
+
   end
 
   def go_to_user_info

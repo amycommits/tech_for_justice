@@ -1,13 +1,27 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "form_layout", except: :index
+
+  respond_to :html, :json
+  layout "form_layout", except: :index
 
   # GET /documents
   # GET /documents.json
   def index
+    @documents = Document.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        @user_info = UserInformation.first
+        @case_info = UserCaseInfo.all
+        pdf = DocumentListPdf.new(@user_info,@case_info)
+        send_data pdf.render, :filename => 'document.pdf', :type => "application/pdf", :disposition => 'inline'
+      end
+    end
     #@existing_user_info = UserInformation.where(user_id: current_user.id)
    # @existing_argument = UserArgument.where(user_id: current_user.id, document_id: 1) || nil
-   
+
    # @documents = Document.all
     #each new document will need to be placed here
    # @expungement_form = @documents.where(name: 'Expungement Motion')
@@ -18,7 +32,32 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.json
   def show
+    #Prawn for PDF
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "hello world"
+        send_data pdf.render, :filename => "document_#{@document.name}.pdf", type: "application/pdf", disposition: "inline"
+      end
+    end
   end
+
+  def expungement_form
+    respond_to do |format|
+      format.html
+      format.pdf do
+        @user_info = current_user.user_information
+        pdf = Prawn::Document.new(@user_info)
+        pdf.text "hello world"
+        send_data pdf.render, :filename => "document.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
+
+
 
   # GET /documents/new
   def new
@@ -33,7 +72,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(document_params)
-   
+
 
     respond_to do |format|
       if @document.save

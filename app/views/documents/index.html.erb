@@ -19,7 +19,7 @@ This was exciting because I can pass params as params
 
 <h2> New Documents </h2>
 <!-- < %= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> @expungement_form.ids}) %> -->
-<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> 1}) %> 
+<%= link_to("New Expungement Form", { controller: "user_documents", action: "new",:document_id=> 1}) %>
 <ol>
   <li>User Information</li><span>/user_informations/3/edit</span>
   <li>User Document</li><span>/documents/1/user_documents/79/edit</span>
@@ -56,3 +56,5 @@ This was exciting because I can pass params as params
 <%= link_to 'New Document', new_document_path %>
 
 <% end %>
+
+<p><%= link_to "Printable Document (PDF)", documents_path(@documents, format: "pdf") %></p>
