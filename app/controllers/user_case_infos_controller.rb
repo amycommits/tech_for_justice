@@ -10,6 +10,9 @@ class UserCaseInfosController < ApplicationController
   def index
     @user_case_infos = UserCaseInfo.all
     @user_case_info = UserCaseInfo.new
+    @this_doc_case = UserCaseInfo.where(:id => DocumentUserCaseInfo.where(user_document_id: [params[:user_document_id]]).map(&:user_case_info_id))
+    #DocumentUserCaseInfo.where(:user_document_id [params[:user_document_id]]).user_case_info
+    
   end
 
   # GET /user_case_infos/1

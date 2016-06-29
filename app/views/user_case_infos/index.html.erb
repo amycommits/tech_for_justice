@@ -1,9 +1,15 @@
 <% @video_url = "https://www.youtube.com/embed/sXakTGa1OIs?list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" %> 
 <p id="notice"><%= notice %></p>
 
-<h1>User Case Information</h1>
+<h1>This Document Criminal Cases</h1>
+
+<% @this_doc_case.each do |this_doc| %>
+  <%= this_doc.docket_id %><p/>
+
+<% end %>
 <% if @user_case_infos.count > 0 %>
-<h2>Current Cases</h2>
+
+<h2>Your Criminal Cases</h2>
 <table class="table table-responsive">
   <thead>
     <tr>
