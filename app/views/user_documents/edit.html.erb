@@ -1,7 +1,9 @@
+<% @video_url = "https://www.youtube.com/embed/sXakTGa1OIs?list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" %> 
+
 <h1>Editing User Document</h1>
 
 <%= render 'form' %>
 
-<%= link_to "Next - User Information", edit_user_document_user_case_info_path(@user_document.id, current_user.id) %>
+<%= link_to "Next - User Information", edit_user_document_user_information_path(@user_document.id, current_user.id) %>
 
 
