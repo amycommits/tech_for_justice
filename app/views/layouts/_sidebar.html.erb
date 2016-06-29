@@ -5,8 +5,11 @@
   </h2>
 
   <h3 class="sidebar-docs-title"> In Progress </h3>
-
-  <p class="sidebar-doc"> Document 1 </p>
+  <% if @user_documents.present? %>
+    <% @user_documents.each do |user_document| %>
+      <p><%= link_to user_document.title, user_document %></p>
+    <% end %>
+  <% end %>
 
   <h3 class="sidebar-docs-title"> Completed </h3>
 

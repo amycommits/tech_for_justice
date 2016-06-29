@@ -1,21 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing User Documents</h1>
-
+<h1>Document Section</h1>
+      <iframe src="https://www.youtube.com/watch?v=3D-GO0qzU_o&index=1&list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" frameborder="0"></iframe>
+<br>
+<% @documents.each do |doc| %>
+  <%= link_to "Create New #{doc.name}", new_user_document_path(document_id: doc.id) %>
+  <p/>
+<% end %>
+<h2>Your Exisiting Documents</h2>
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Document</th>
-      <th colspan="3"></th>
+     
+      <th>Document Name</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @user_documents.each do |user_document| %>
       <tr>
-        <td><%= user_document.user %></td>
-        <td><%= user_document.document %></td>
+        <td><%= user_document.title %></td>
         <td><%= link_to 'Show', user_document %></td>
         <td><%= link_to 'Edit', edit_user_document_path(user_document) %></td>
         <td><%= link_to 'Destroy', user_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,6 +29,4 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New User document', new_user_document_path %>
