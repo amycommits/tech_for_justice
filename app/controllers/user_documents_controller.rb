@@ -12,6 +12,15 @@ class UserDocumentsController < ApplicationController
   def final_review
      @user_document = UserDocument.find(params[:user_document_id]) 
      @doc_user_info = @user_document.user_informations
+
+     respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "Hello World"
+        send_data pdf.render
+      end
+    end
   end
 
   # GET /user_documents/1

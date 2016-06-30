@@ -11,9 +11,10 @@
 <table>
   <thead>
     <tr>
-     
       <th>Document Name</th>
-      <th colspan="3">Actions</th>
+      <th>Edit Document</th>
+      <th>Show Final Document</th>
+      <th>Destroy Document</th>
     </tr>
   </thead>
 
@@ -21,8 +22,8 @@
     <% @user_documents.each do |user_document| %>
       <tr>
         <td><%= user_document.title %></td>
-        <td><%= link_to 'Show', user_document %></td>
-        <td><%= link_to 'Edit', edit_user_document_path(user_document) %></td>
+        <td><%= link_to 'Edit', edit_user_document_user_information_path(user_document,current_user.id) %></td>
+        <td><%= link_to 'Show', user_document_final_review_path(user_document) %></td>
         <td><%= link_to 'Destroy', user_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
