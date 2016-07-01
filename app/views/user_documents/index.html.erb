@@ -3,31 +3,8 @@
 <h1>Document Section</h1>
       <iframe src="https://www.youtube.com/watch?v=3D-GO0qzU_o&index=1&list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" frameborder="0"></iframe>
 <br>
-<% @documents.each do |doc| %>
-  <%= link_to "Create New #{doc.name}", new_user_document_path(document_id: doc.id) %>
-  <p/>
-<% end %>
-<h2>Your Exisiting Documents</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Document Name</th>
-      <th>Edit Document</th>
-      <th>Show Final Document</th>
-      <th>Destroy Document</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @user_documents.each do |user_document| %>
-      <tr>
-        <td><%= user_document.title %></td>
-        <td><%= link_to 'Edit', edit_user_document_user_information_path(user_document,current_user.id) %></td>
-        <td><%= link_to 'Show', user_document_final_review_path(user_document) %></td>
-        <td><%= link_to 'Destroy', user_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h2>About:</h2>
+
 
 
