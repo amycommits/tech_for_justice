@@ -48,7 +48,7 @@
 <h2>Add a New Case</h2>
 <%= render partial: 'form' %>
 <p/>
-<%= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %>
+<!--< %= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %> -->
 <br/>
 <% if !params[:user_document_id].nil?%>
 <%= link_to 'Next: User Argument(s)', user_document_user_arguments_path(params[:user_document_id]),class: 'submit_button' %>

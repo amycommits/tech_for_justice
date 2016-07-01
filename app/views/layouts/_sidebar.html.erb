@@ -1,17 +1,29 @@
 <div class="sidebar two-column__sidebar">
 
+
+ <% if @documents.present? %>
+  <h2 class="blue_banner">
+    New Document
+  </h2>
+  <% @documents.each do |doc| %>
+    <%= link_to "#{doc.name}", new_user_document_path(document_id: doc.id) %>
+    <br/>
+  <% end %>
+  <% else %>
+    <h2 class="blue_banner">
+    <%= link_to "New Document", user_documents_path %>
+  </h2>
+ <% end %>
+
+  <% if @user_documents.present? %>
   <h2 class="blue_banner">
     My Documents
   </h2>
-
-  <h3 class="sidebar-docs-title"> In Progress </h3>
-  <% if @user_documents.present? %>
     <% @user_documents.each do |user_document| %>
-      <p><%= link_to user_document.title, user_document %></p>
+      <p><%= link_to user_document.title, edit_user_document_user_information_path(user_document,current_user.id)  %></p>
     <% end %>
   <% end %>
 
-  <h3 class="sidebar-docs-title"> Completed </h3>
 
 
 </div>
