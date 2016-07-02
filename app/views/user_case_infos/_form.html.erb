@@ -29,6 +29,11 @@
   <div class="field">
     <%= f.label :charge_type %><br>
     <%= f.text_field :charge_type, :title => 'Enter Your Charge Type', :class => 'tooltips'  %>
+    <select>
+     <option value="(a) Its been two years since I was charged with an eligible misdemeanor but not convicted">(a) Its been two years since I was charged with an eligible misdemeanor but not convicted</option>
+     <option value="(b) its has been 5 years I was charged but not convicted with an ineligible misdemeanor...">(b) its has been 5 years I was charged but not convicted with an ineligible misdemeanor...</option>
+     <option value="(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile">(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile</option>
+    </select>
   </div>
   <div class="field">
     <%= f.label :police_description %><br>
@@ -37,10 +42,20 @@
   <div class="field">
     <%= f.label :case_conclusion %><br>
     <%= f.text_area :case_conclusion, :title => 'Enter the Conclusion for Your Case', :class => 'tooltips'  %>
+    <select>
+      <option value="no papered">no papered</option>
+      <option value="dismissed">dismissed</option>
+      <option value="nolle prosequi">nolle prosequi</option>
+      <option value="guilty">guilty</option>
+    </select>
   </div>
   <div class="field">
     <%= f.label :is_case_pending %><br>
     <%= f.text_field :is_case_pending, :title => 'Is Your Case Still Pending', :class => 'tooltips'  %>
+    <form action="">
+      <input type="radio" name="case-pending" value="Yes"> Yes<br>
+      <input type="radio" name="Case-pending" value="No"> No<br>
+    </form>
   </div>
   <div class="field tooltips" title = "Enter the Date Your Case Ended" >
     <%= f.label :case_end_date %><br>
