@@ -10,16 +10,27 @@ class DocumentListPdf < Prawn::Document
     text "v."
     text "#{@user_info.first_name} #{@user_info.last_name}"##{@user_info.first_name} #{@user_info.last_name} 
     
-    @case_info.each do |c|
-    text ":Criminal Number: #{c.docket_id}" #10-12345
-    text ": #{c.case_conclusion}" #Closed Case
+    bounding_box([250,670], :width => 150) do
+      @case_info.each.with_index do |c,i|
+        text ":Criminal Number: #{c.docket_id}"
+        text ":#{c.case_conclusion}"  #Closed Case
+        if (i < (@case_info.count - 1))  
+          text ":"
+        end
+      end
+      text " "
     end
+
     text "MOTION TO SEAL PUBLICLY AVAILABLE RECORDS IN MULTIPLE CASES"
     text "Pursuant to code § 16-803, #{@user_info.first_name} #{@user_info.last_name} respectfully moves this Honorable Court for an order to seal all publicly available records for each of the arrests and related court proceedings listed below. 
                 D.C. Code § 16-803(f) requires the movant to seal all eligible arrests and convictions in the same proceeding.
                    In support of this motion, movant states the following:"
                    
-               
+   @case_info.each.with_index do |c,i|
+      indent(20) do text ""
+      end 
+   end 
+              
     text  "For the reasons set forth above and in the accompanying Memorandum, Public 
                 requests that the Court order all publicly available records of movant's arrests, convictions, 
                 and related court proceedings be sealed. See § 16-803. 
