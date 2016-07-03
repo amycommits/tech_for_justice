@@ -1,7 +1,8 @@
 <% @video_url = "https://www.youtube.com/embed/sXakTGa1OIs?list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" %> 
 <p id="notice"><%= notice %></p>
-
-<h1>Listing User References</h1>
+<h1>Character Building</h1>
+<h2>My References</h2>
+<h3>People that have written about the person that I am today.</h3>
 
 <table>
   <thead>
@@ -31,5 +32,7 @@
 
 <br>
 
-<h1>New User reference</h1>
+<h1>New Reference</h1>
 <%= render 'form' %>
+
+<%= link_to 'Next: User Review', user_document_final_review_path, class: 'submit_button' %>
