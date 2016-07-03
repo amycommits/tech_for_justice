@@ -46,6 +46,10 @@
     <%= f.label :case_end_date %><br>
     <%= f.datetime_select :case_end_date %>
   </div>
+   <div class="field">
+    <%= f.label :user_document_id %><br>
+    <%= f.text_field :user_document_id, value: params[:user_document_id] %>
+  </div>
   <div class="actions">
     <%= f.submit :class => 'submit_button'%>
   </div>
