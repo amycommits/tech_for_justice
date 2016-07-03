@@ -1,21 +1,22 @@
+<% @video_url = "https://www.youtube.com/embed/sXakTGa1OIs?list=PLIoHkUByRQSbW3gHYYl9qe9YxOYybPxeB" %> 
 <p id="notice"><%= notice %></p>
 
 <h1>My Criminal Case Information</h1>
 <% if @user_case_infos.count > 0 %>
-<h2>Criminal Cases that have been entered:</h2>
-<table class="table table-responsive">
-  <thead>
-    <tr>
-      <th>Docket</th>
-      <th>Charged with</th>
-      <th>Charge type</th>
-      <th>Police description</th>
-      <th>Case conclusion</th>
-      <th>Is case pending</th>
-      <th>Case end date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h2>Criminal Cases that have been entered:</h2>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Docket</th>
+        <th>Charged with</th>
+        <th>Charge type</th>
+        <th>Police description</th>
+        <th>Case conclusion</th>
+        <th>Is case pending</th>
+        <th>Case end date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
   <tbody>
     <% @user_case_infos.each do |user_case_info| %>
       <tr>
@@ -32,7 +33,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+  </table>
 <% end %>
 
 <br />
@@ -44,8 +45,14 @@
 <!--< %= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %> -->
 <br/>
 <% if !params[:user_document_id].nil?%>
+<<<<<<< HEAD
 <%= link_to 'Next: User Argument(s)', user_document_user_arguments_path(params[:user_document_id]), class: "submit_button" %>
 <% end %>
 
 
 <br/>
+=======
+<%= link_to 'Next: User Argument(s)', user_document_user_arguments_path(params[:user_document_id]),class: 'submit_button' %>
+<% end %>
+
+>>>>>>> f2084b117fe9c8e3850e5a9cf783ba65bfeef959

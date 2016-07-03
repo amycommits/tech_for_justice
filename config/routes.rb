@@ -30,7 +30,8 @@ Rails.application.routes.draw do
     resources :user_case_infos
     resources :user_arguments
     resources :user_references
-    resources :review
+    #resources :review
+    get 'final_review', to: 'user_documents#final_review'
   end
 
   devise_scope :user do

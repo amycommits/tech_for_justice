@@ -19,7 +19,11 @@
     <%= f.label :document_id %><br>
     <%= f.text_field :document_id, value: params[:document_id] %>
   </div>
+  <div class="field" >
+    <%= f.label "Name Your Document" %><br>
+    <%= f.text_field :title, value: params[:document_id] %>
+  </div>
   <div class="actions">
-    <%= f.submit "agree", :class => 'submit_button'%>
+    <%= f.submit "Agree", :class => 'submit_button'%>
   </div>
 <% end %>

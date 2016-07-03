@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= @doc_user_info.each do |user_info|%>
+	user_info.first_name
+
+<% end %>
+
+<p><%= link_to "Printable Document (PDF)", documents_path(@documents, format: "pdf") %></p>

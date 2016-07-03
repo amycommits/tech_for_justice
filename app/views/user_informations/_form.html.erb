@@ -19,7 +19,7 @@
 
   <div class="field" hidden>
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id, value: current_user.id %>
+    <%= f.text_field :user_id, value: current_user.id%>
   </div>
   <div class="field">
     <%= f.label :pd_id %><br>
@@ -27,7 +27,7 @@
   </div>
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name, :title => 'Enter Legal First Name', :class => 'tooltips'  %>
+    <%= f.text_field :first_name, :title => 'Enter Legal First Name', :class => 'tooltips', spellcheck: true   %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
