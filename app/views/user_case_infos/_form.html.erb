@@ -28,34 +28,36 @@
   </div>
   <div class="field">
     <%= f.label :charge_type %><br>
-    <%= f.text_field :charge_type, :title => 'Enter Your Charge Type', :class => 'tooltips'  %>
-    <select>
-     <option value="(a) Its been two years since I was charged with an eligible misdemeanor but not convicted">(a) Its been two years since I was charged with an eligible misdemeanor but not convicted</option>
-     <option value="(b) its has been 5 years I was charged but not convicted with an ineligible misdemeanor...">(b) its has been 5 years I was charged but not convicted with an ineligible misdemeanor...</option>
-     <option value="(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile">(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile</option>
-    </select>
+    <%= f.select :charge_type, {}, { include_blank: 'Select Your Charge Type' }, :title => 'Select Your Charge Type', :class => 'form-control tooltips' do  %>
+       <option value="(a) It has been two years since I was charged with an eligible misdemeanor but not convicted">(a) It has been two years since I was charged with an eligible misdemeanor but not convicted</option>
+       <option value="(b) It has been 5 years I was charged but not convicted with an ineligible misdemeanor...">(b) It has been 5 years I was charged but not convicted with an ineligible misdemeanor...</option>
+       <option value="(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile">(c) It has been 10 years since I finished parole, probation, prison, or supervised release after being charged with an eligible misdemeanor or eligible felony conviction  or inelegibile</option>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :police_description %><br>
     <%= f.text_field :police_description, :title => 'Enter the Police Description for Your Charge', :class => 'tooltips'  %>
   </div>
-  <div class="field">
-    <%= f.label :case_conclusion %><br>
-    <%= f.text_area :case_conclusion, :title => 'Enter the Conclusion for Your Case', :class => 'tooltips'  %>
-    <select>
+  <div class="form-group">
+    <%= f.label :case_conclusion %>
+    <%= f.select :case_conclusion, {}, { include_blank: 'Select Your Conclusion' }, :title => 'Select Your Conclusion', :class => 'form-control tooltips' do  %>
       <option value="no papered">no papered</option>
       <option value="dismissed">dismissed</option>
       <option value="nolle prosequi">nolle prosequi</option>
       <option value="guilty">guilty</option>
-    </select>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :is_case_pending %><br>
-    <%= f.text_field :is_case_pending, :title => 'Is Your Case Still Pending', :class => 'tooltips'  %>
-    <form action="">
-      <input type="radio" name="case-pending" value="Yes"> Yes<br>
-      <input type="radio" name="Case-pending" value="No"> No<br>
-    </form>
+  <div class="form-group">
+    <%= f.label :is_case_pending, 'Is case pending?' %>
+    <span class="radio">
+      <label>
+        <%= f.radio_button :is_case_pending, "No", class: 'tooltips', title: 'No, case is not pending' %> No
+      </label>
+      <label>
+        <%= f.radio_button :is_case_pending, "Yes", class: 'tooltips', title: 'Yes, case is pending' %> Yes
+      </label>
+    </span>
+ 
   </div>
   <div class="field tooltips" title = "Enter the Date Your Case Ended" >
     <%= f.label :case_end_date %><br>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>User Case Information</h1>
+<h1>My Criminal Case Information</h1>
 <% if @user_case_infos.count > 0 %>
-<h2>Current Cases</h2>
+<h2>Criminal Cases that have been entered:</h2>
 <table class="table table-responsive">
   <thead>
     <tr>
@@ -41,11 +41,11 @@
 <h2>Add a New Case</h2>
 <%= render partial: 'form' %>
 <p/>
-<%= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %>
+<!--< %= link_to 'Add Case Info to Document', new_document_user_case_info_path(params[:user_document_id]) %> -->
 <br/>
 <% if !params[:user_document_id].nil?%>
-<%= link_to 'User Argument(s)', user_document_user_arguments_path(params[:user_document_id]) %>
+<%= link_to 'Next: User Argument(s)', user_document_user_arguments_path(params[:user_document_id]), class: "submit_button" %>
 <% end %>
 
-<%= link_to 'New User case info', new_user_case_info_path %>
+
 <br/>
