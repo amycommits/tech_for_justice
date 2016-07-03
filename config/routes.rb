@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :prototypes
+  #resources :prototypes
   # resources :document_user_case_infos
   # resources :document_user_informations
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :user_documents do
     resources :user_informations
     #resources :document_user_informations
-    resources :user_case_infos
+    resources :user_case_infos, only: [:index,:new,:show]
     resources :user_arguments
     resources :user_references
     #resources :review

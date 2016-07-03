@@ -25,10 +25,6 @@
     <%= f.text_field :user_document_id, value: params[:user_document_id] %>
   </div>
   <div class="field">
-    <%= f.label :attachment %>
-    <%= f.text_field :attachment, :title => 'Upload Your Attachent', :class => 'tooltips'   %>
-  </div>
-  <div class="field">
     <%= f.label :reference_name %>
     <%= f.text_field :reference_name, :title => 'Enter Your References Name', :class => 'tooltips'   %>
   </div>
@@ -40,8 +36,15 @@
     <%= f.label :recommendation %><br />
     <%= f.text_area :recommendation, :title => 'Enter the Recommendation', :class => 'tooltips'   %>
   </div>
+  <h1>OR</h1>
+  <h2>File location of Reference </h2>
+   <div class="field">
+    <% f.label :attachment %>
+    <%= f.text_field :attachment, :title => 'Upload Your Attachent', :class => 'tooltips'   %>
+  </div>
+ 
   <div class="actions">
-    <%= f.submit :class => 'submit_button'%>
+    <%= f.submit "Add Reference", :class => 'submit_button'%>
   </div>
 
 <% end %>
