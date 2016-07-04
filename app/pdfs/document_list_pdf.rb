@@ -27,7 +27,8 @@ class DocumentListPdf < Prawn::Document
                    In support of this motion, movant states the following:"
                    
    @case_info.each.with_index do |c,i|
-      indent(20) do text ""
+    text "CASE #{i}"
+      indent(20) do text s
       end 
    end 
               
