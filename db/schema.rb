@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628222647) do
+ActiveRecord::Schema.define(version: 20160706175609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "document_user_case_infos", force: :cascade do |t|
     t.integer  "user_document_id"
@@ -54,6 +72,16 @@ ActiveRecord::Schema.define(version: 20160628222647) do
 
   add_index "map_user_document_user_infos", ["user_document_id"], name: "index_map_user_document_user_infos_on_user_document_id", using: :btree
   add_index "map_user_document_user_infos", ["user_information_id"], name: "index_map_user_document_user_infos_on_user_information_id", using: :btree
+
+  create_table "prototypes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "static_contents", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_arguments", force: :cascade do |t|
     t.integer  "document_id"
@@ -103,15 +131,16 @@ ActiveRecord::Schema.define(version: 20160628222647) do
     t.text     "first_name"
     t.text     "last_name"
     t.text     "middle_name"
-    t.text     "preefix_suffix"
     t.text     "title"
     t.text     "address_line_1"
-    t.text     "address_line2"
     t.text     "city"
     t.text     "state"
     t.text     "phone_number"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.text     "address_line_2"
+    t.text     "prefix"
+    t.text     "suffix"
   end
 
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree
