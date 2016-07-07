@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory(:user) do
     current_sign_in_at '2016-06-26T12:43 UTC'
     current_sign_in_ip '127.0.0.1'
-    email 'admin@example.com'
+    sequence(:email) { |x| 'user#{x}@example.com' }
     password 'password'
     password_confirmation 'password'
     last_sign_in_at '2016-06-26T12:43 UTC'
@@ -13,5 +13,10 @@ FactoryGirl.define do
     reset_password_token ''
     sign_in_count 1
     sequence(:uid, 1)
+
+    trait :admin do
+      sequence(:email) { |x| 'admin#{x}@example.com' }
+      admin true
+    end
   end
 end
