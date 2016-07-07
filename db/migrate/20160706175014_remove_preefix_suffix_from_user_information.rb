@@ -1,5 +1,5 @@
 class RemovePreefixSuffixFromUserInformation < ActiveRecord::Migration
   def change
-    remove_column :user_informations, :preefix_suffix, :text
+    remove_column :user_informations, :prefix_suffix, :text
   end
 end
