@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628222647) do
+ActiveRecord::Schema.define(version: 20160706175609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,15 +103,16 @@ ActiveRecord::Schema.define(version: 20160628222647) do
     t.text     "first_name"
     t.text     "last_name"
     t.text     "middle_name"
-    t.text     "preefix_suffix"
     t.text     "title"
     t.text     "address_line_1"
-    t.text     "address_line2"
     t.text     "city"
     t.text     "state"
     t.text     "phone_number"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.text     "address_line_2"
+    t.text     "prefix"
+    t.text     "suffix"
   end
 
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree

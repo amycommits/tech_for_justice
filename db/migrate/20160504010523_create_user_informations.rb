@@ -6,10 +6,11 @@ class CreateUserInformations < ActiveRecord::Migration
       t.text :first_name
       t.text :last_name
       t.text :middle_name
-      t.text :preefix_suffix
+      t.text :prefix
+      t.text :suffix
       t.text :title
       t.text :address_line_1
-      t.text :address_line2
+      t.text :address_line_2
       t.text :city
       t.text :state
       t.text :phone_number
