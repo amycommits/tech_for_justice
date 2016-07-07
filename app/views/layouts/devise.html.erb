@@ -12,6 +12,7 @@
         <div class="middle">
           <div class="inner">
             <img id="logo" src="<%= image_path('logo_white.png') %>" alt="logo" width="150">
+            <%= render 'layouts/flash_alerts' %>
             <%= yield %>
           </div>
         </div>
