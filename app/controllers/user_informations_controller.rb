@@ -47,7 +47,7 @@ class UserInformationsController < ApplicationController
   def update
         @doc_id = UserDocument.where(user_id: current_user.id).last
       respond_to do |format|
-     
+
       if @user_information.update(user_information_params)
           format.html { redirect_to user_document_user_case_infos_path(@doc_id) }
           format.json { render :show, status: :created, location: @user_information }
@@ -76,6 +76,6 @@ class UserInformationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_information_params
-      params.require(:user_information).permit(:user_id, :pd_id, :first_name, :last_name, :middle_name, :preefix_suffix, :title, :address_line_1, :address_line2, :city, :state, :phone_number)
+      params.require(:user_information).permit(:user_id, :pd_id, :first_name, :last_name, :middle_name, :prefix, :suffix, :title, :address_line_1, :address_line_2, :city, :state, :phone_number)
     end
 end

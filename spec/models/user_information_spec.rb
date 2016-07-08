@@ -8,10 +8,11 @@
 #  first_name     :text
 #  last_name      :text
 #  middle_name    :text
-#  preefix_suffix :text
+#  prefix         :text
+#  suffix         :text
 #  title          :text
 #  address_line_1 :text
-#  address_line2  :text
+#  address_line_2 :text
 #  city           :text
 #  state          :text
 #  phone_number   :text
