@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.tooltipster.min
+//= require bootstrap-datepicker
 //= require_tree .
