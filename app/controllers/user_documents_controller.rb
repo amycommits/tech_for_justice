@@ -15,6 +15,7 @@ class UserDocumentsController < ApplicationController
 
      respond_to do |format|
       format.html
+      format.json { render :json => {:message => "Success"} }
       format.pdf do
         pdf = Prawn::Document.new
         pdf.text "Hello World"

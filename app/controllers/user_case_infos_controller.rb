@@ -10,6 +10,7 @@ class UserCaseInfosController < ApplicationController
   def index
     @user_case_infos = UserCaseInfo.all
     @user_case_info = UserCaseInfo.new
+    
     @this_doc_case = UserCaseInfo.where(:id => DocumentUserCaseInfo.where(user_document_id: [params[:user_document_id]]).map(&:user_case_info_id))
     #DocumentUserCaseInfo.where(:user_document_id [params[:user_document_id]]).user_case_info
     
@@ -25,6 +26,7 @@ class UserCaseInfosController < ApplicationController
   def new
     @user_case_infos = UserCaseInfo.all
     @user_case_info = UserCaseInfo.new
+    @user_case_info.document_user_case_info.create(user_document_id: [params[:user_document_id]])
     #@user_case_info = UserDocument.user_case_info.new
   end
 
@@ -87,6 +89,6 @@ class UserCaseInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_case_info_params
-      params.require(:user_case_info).permit(:user_id, :docket_id, :charged_with, :charge_type, :police_description, :case_conclusion, :is_case_pending, :case_end_date, :document_id)
+      params.require(:user_case_info).permit(:user_id, :docket_id, :charged_with, :charge_type, :police_description, :case_conclusion, :is_case_pending, :case_end_date, :user_document_id)
     end
 end

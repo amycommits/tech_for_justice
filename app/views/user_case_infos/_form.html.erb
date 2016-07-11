@@ -72,6 +72,10 @@
        <input type="radio" name="user-argumentsces"> 
     </form>
   </div>
+   <div class="field">
+    <%= f.label :user_document_id %><br>
+    <%= f.text_field :user_document_id, value: params[:user_document_id] %>
+  </div>
   <div class="actions">
     <%= f.submit :class => 'submit_button'%>
   </div>
