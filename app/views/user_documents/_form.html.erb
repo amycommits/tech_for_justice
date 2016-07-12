@@ -10,15 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field" hidden>
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id%>
-  </div>
-  <div class="field" hidden>
-    <%= f.label :document_id %><br>
-    <%= f.text_field :document_id, value: params[:document_id] %>
-  </div>
   <div class="field" >
     <%= f.label "Name Your Document" %><br>
     <%= f.text_field :title, value: params[:document_id] %>
