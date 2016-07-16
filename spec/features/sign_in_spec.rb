@@ -15,7 +15,7 @@ describe 'Sign In' do
     end
 
     it 'displays' do
-      expect(page).to have_link 'Start New Document', href: new_document_path
+      expect(page).to have_link 'Start New Document', href: new_user_document_path
     end
     it 'displays alert' do
       expect(page).to have_selector '.alert-success', text: "Signed in successfully."

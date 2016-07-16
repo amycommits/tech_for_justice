@@ -8,3 +8,7 @@
 Document.delete_all
 Document.create!(name: "Expungement Form")
 p "created Expungement Form"
+
+# TODO: Remove this before production deployment
+User.delete_all
+User.create(email: 'admin@example.com', password: 'password')

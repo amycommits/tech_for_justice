@@ -8,17 +8,13 @@
 </head>
 
 <body>
-	<div class="wrap">
-		<%= render 'layouts/header' %>
-		<div class="two-column">
-			<%= render "partials/form_navigation" %>
-			<div class="two-column__body form_styling">
-        <div class="form_container">
-				<%= yield %>
-      </div>
-			</div>
-		</div>
+  <div class="wrap">
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+        <%= yield %>
+    </div>
     <%= render 'layouts/footer' %>
-	</div>
+  </div>
 </body>
 </html>
