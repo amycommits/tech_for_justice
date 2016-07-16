@@ -3,4 +3,5 @@ rvm:
   - 2.3.0
 services:
   - postgresql
-
+before_script:
+  - psql -c 'create database tfj_test;' -U postgres
