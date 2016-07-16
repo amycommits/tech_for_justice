@@ -25,6 +25,14 @@
     <%= f.label :pd_id %><br>
     <%= f.text_field :pd_id, :title => 'Enter Your Police Case ID', :class => 'tooltips' %>
   </div>
+   <div class="field">
+    <%= f.label :title %><br>
+    <%= f.select :title, {}, { include_blank: 'Select Your Title' }, :title => 'Select Your Title', :class => 'form-control tooltips' do  %>
+       <option value="MR">Mr.</option>
+       <option value="MRS">Mrs.</option>
+       <option value="MS">Ms.</option>
+    <% end %>
+  </div>
   <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name, :title => 'Enter Legal First Name', :class => 'tooltips', spellcheck: true   %>
@@ -45,10 +53,7 @@
     <%= f.label :suffix %><br>
     <%= f.text_field :suffix, :title => 'Enter Legal Prefix/Suffix for your Name', :class => 'tooltips'  %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, :title => 'Enter Title', :class => 'tooltips'  %>
-  </div>
+
   <div class="field">
     <%= f.label :address_line_1 %><br>
     <%= f.text_field :address_line_1, :title => 'Enter Legal address', :class => 'tooltips'  %>
@@ -61,10 +66,62 @@
     <%= f.label :city %><br>
     <%= f.text_field :city, :title => 'Enter Name of City', :class => 'tooltips'  %>
   </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state, :title => 'Enter Name of State', :class => 'tooltips'  %>
-  </div>
+    <%= f.select :state, {}, { include_blank: 'My State' }, :title => 'Select the state in which you legally reside', :class => 'form-control tooltips' do  %>
+  <option value="AL">Alabama</option>
+  <option value="AK">Alaska</option>
+  <option value="AZ">Arizona</option>
+  <option value="AR">Arkansas</option>
+  <option value="CA">California</option>
+  <option value="CO">Colorado</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="DC">District of Columbia</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="HI">Hawaii</option>
+  <option value="ID">Idaho</option>
+  <option value="IL">Illinois</option>
+  <option value="IN">Indiana</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NV">Nevada</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NM">New Mexico</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="ND">North Dakota</option>
+  <option value="OH">Ohio</option>
+  <option value="OK">Oklahoma</option>
+  <option value="OR">Oregon</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="SD">South Dakota</option>
+  <option value="TN">Tennessee</option>
+  <option value="TX">Texas</option>
+  <option value="UT">Utah</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WA">Washington</option>
+  <option value="WV">West Virginia</option>
+  <option value="WI">Wisconsin</option>
+  <option value="WY">Wyoming</option>
+ <% end %>
+</div>
   <div class="field">
     <%= f.label :phone_number %><br>
     <%= f.text_field :phone_number, :title => 'Enter Phone Number', :class => 'tooltips'  %>
