@@ -28,7 +28,7 @@ class DocumentListPdf < Prawn::Document
                    
    @case_info.each.with_index do |c,i|
     text "CASE #{i}"
-      indent(20) do text s
+      indent(20) do 
       end 
    end 
               
