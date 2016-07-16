@@ -1,0 +1,27 @@
+footer {
+  margin-top: 2em;
+  padding-top: 50px;
+
+  div.container {
+    text-align: center;
+
+    a {
+      color: #1b2845;
+    }
+
+    ul {
+      margin-bottom: 20px;
+      margin-left: 0;
+      padding-left: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 1.5em;
+      }
+    }
+  }
+
+  p {
+    color: #bbb;
+  }
+}

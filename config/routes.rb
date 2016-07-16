@@ -38,8 +38,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  get 'about', to: 'application#about'
-  get 'contact', to: 'application#contact'
+  get '/about', to: 'static_content#about', as: :about
+  get '/contact', to: 'static_content#contact', as: :contact
 
   #For pdf testing
   get 'documents', to: 'documents#index'
