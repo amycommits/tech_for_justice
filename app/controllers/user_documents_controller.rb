@@ -11,15 +11,20 @@ class UserDocumentsController < ApplicationController
   end
   def final_review
      @user_document = UserDocument.find(params[:user_document_id]) 
-     @doc_user_info = @user_document.user_informations
+     #@user_info = @user_document.user_informations
+     @user_info = UserInformation.first
+     @case_info = UserCaseInfo.all
 
      respond_to do |format|
       format.html
-      format.json { render :json => {:message => "Success"} }
+      format.json { render :json => {:user_info => @user_info, :case_info => @case_info} }
+      format.text { render :text => {:user_info => @user_info, :case_info => @case_info} }
       format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World"
-        send_data pdf.render
+        #@user_info = UserInformation.first
+        
+        pdf = DocumentListPdf.new(@user_info,@case_info)
+        send_data pdf.render, :filename => 'document.pdf', :type => "application/pdf", :disposition => 'inline'
+    
       end
     end
   end
@@ -27,15 +32,6 @@ class UserDocumentsController < ApplicationController
   # GET /user_documents/1
   # GET /user_documents/1.json
   def show
-    #Prawn for PDF
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World"
-        send_data pdf.render
-      end
-    end
   end
 
   # GET /user_documents/new

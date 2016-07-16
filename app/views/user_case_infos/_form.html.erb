@@ -61,9 +61,10 @@
   </div>
   <div class="field tooltips" title = "Enter the Date Your Case Ended" >
     <%= f.label :case_end_date %><br>
-    <%= f.datetime_select :case_end_date %>
+    <%= f.text_field :case_end_date, "data-provide" => 'datepicker', 'data-date-format' => 'yyyy-mm-dd' %>
+  
   </div>
-   <div class="field">
+   <div class="field" hidden>
     <%= f.label :user_document_id %><br>
     <%= f.text_field :user_document_id, value: params[:user_document_id] %>
   </div>

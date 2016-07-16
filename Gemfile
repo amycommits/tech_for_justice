@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-datepicker-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'hologram'
